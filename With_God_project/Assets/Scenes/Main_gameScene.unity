@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -113,6 +113,31 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &37509878 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1833605301008668, guid: f5595e0f0446350498be9183e6b1402a,
+    type: 2}
+  m_PrefabInternal: {fileID: 208106289}
+--- !u!50 &37509882
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 37509878}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &208106289
 Prefab:
   m_ObjectHideFlags: 0
@@ -159,6 +184,31 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5595e0f0446350498be9183e6b1402a, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &289323914 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1833605301008668, guid: f5595e0f0446350498be9183e6b1402a,
+    type: 2}
+  m_PrefabInternal: {fileID: 887625881}
+--- !u!50 &289323918
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 289323914}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,7 +280,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 534669902}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.3}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -278,6 +328,31 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5595e0f0446350498be9183e6b1402a, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1298081622 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1833605301008668, guid: f5595e0f0446350498be9183e6b1402a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1879566779}
+--- !u!50 &1298081626
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1298081622}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1665404737
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,6 +385,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   startState: 0
+  cc: {fileID: 0}
+  moveSpeed: 0
+  fallSpeed: 0
+  h: 0
+  rigid: {fileID: 0}
 --- !u!61 &1665404739
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -498,3 +578,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f599a13c62aa3142aa64e60fa7ac458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
