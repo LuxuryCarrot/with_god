@@ -5,6 +5,7 @@ using UnityEngine;
 public enum PlayerState
 {
     IDLE = 0,
+    WALK,
     RUN,
     JUMP,
     DEAD
@@ -16,22 +17,25 @@ public class PlayerFSMManager : MonoBehaviour {
     public CharacterController cc;
     public float moveSpeed;
     public float fallSpeed;
+    public float xMove;
     public float h;
+    public Animator animator;
 
     public Rigidbody rigid;
 
-    Vector3 movement;
+    Vector3 movement = Vector3.zero;
     bool isJumping;
 
     Dictionary<PlayerState, PlayerFSMState> states = new Dictionary<PlayerState, PlayerFSMState>();
 
     private void Awake()
     {
-
+        moveSpeed = 3;
         cc = GetComponent<CharacterController>();
 
-        states.Add(PlayerState.IDLE, GetComponent<PlayerIDLE>());
-        states.Add(PlayerState.RUN, GetComponent<PlayerRUN>());
+        states.Add(PlayerState.IDLE, GetComponent<Player_S>());
+        states.Add(PlayerState.RUN, GetComponent<Player_R>());
+        states.Add(PlayerState.WALK, GetComponent<Player_W>());
     }
     // Use this for initialization
     private void Start() {
@@ -58,13 +62,20 @@ public class PlayerFSMManager : MonoBehaviour {
 	private void Update () {
 
         h = Input.GetAxisRaw("Horizontal");
-        run(h);
-    }
+        xMove = Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime;
 
-    void run(float h)
-    {
-        movement.Set(h, 0, 0);
-        movement = movement.normalized * moveSpeed * Time.deltaTime;
-        rigid.MovePosition(rigid.transform.position + movement);
+        if (h < 0)
+        {
+            animator.SetBool("isWalking", true);
+            transform.Translate(new Vector3(xMove, 0, 0));
+        }
+        if (h > 0)
+        {
+            animator.SetBool("isWalking", true);
+            this.transform.Translate(new Vector3(xMove, 0, 0));
+        }
+
     }
+    
+  
 }

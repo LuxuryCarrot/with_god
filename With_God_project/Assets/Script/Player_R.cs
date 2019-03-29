@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerRUN : PlayerFSMState {
+public class Player_R : PlayerFSMState {
 
     Vector3 move = Vector3.zero;
 

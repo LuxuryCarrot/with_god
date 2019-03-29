@@ -365,6 +365,7 @@ GameObject:
   - component: {fileID: 1665404740}
   - component: {fileID: 1665404739}
   - component: {fileID: 1665404738}
+  - component: {fileID: 1665404743}
   m_Layer: 0
   m_Name: dummy
   m_TagString: Untagged
@@ -388,7 +389,9 @@ MonoBehaviour:
   cc: {fileID: 0}
   moveSpeed: 0
   fallSpeed: 0
+  xMove: 0
   h: 0
+  animator: {fileID: 0}
   rigid: {fileID: 0}
 --- !u!61 &1665404739
 BoxCollider2D:
@@ -424,7 +427,7 @@ Animator:
   m_GameObject: {fileID: 1665404737}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 13cc1c8de206c8e4c943909cc0806420, type: 2}
+  m_Controller: {fileID: 9100000, guid: a71970acad4449342a12ed38127afd89, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -492,6 +495,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1665404743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1665404737}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c4c397dc8f97c645b4fd4f4fd03cbae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1879566779
 Prefab:
   m_ObjectHideFlags: 0
