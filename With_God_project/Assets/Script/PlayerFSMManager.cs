@@ -16,9 +16,10 @@ public class PlayerFSMManager : MonoBehaviour {
     public CharacterController cc;
     public float moveSpeed;
     public float fallSpeed;
-    public float jump;
-    public float xMove;
 
+
+    public float xMove;
+    
     
     public Animator animator;
     public SpriteRenderer mySpriteRenderer;
@@ -33,7 +34,6 @@ public class PlayerFSMManager : MonoBehaviour {
     private void Awake()
     {
         moveSpeed = 0.5f;
-        jump = 10.0f;
         fallSpeed = -20.0f;
         cc = GetComponent<CharacterController>();
 
@@ -64,10 +64,27 @@ public class PlayerFSMManager : MonoBehaviour {
 
 	// Update is called once per frame
 	private void Update () {
-        moveDirection = new Vector2(Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime, fallSpeed * Time.deltaTime);
+        moveDirection = new Vector2(Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime, 0);
         //moveDirection = transform.TransformDirection(moveDirection);
         //moveDirection *= moveSpeed;
         //////////////////////////////////WALK//////////////////////////////////
+
+        //if(collision.transform.tag == "Ground")//땅에 접촉한 동안에 실행됨
+        //{
+        //    this.isGrounded = true;
+        //    this.player.transform.position = Vector2.zero;
+
+        //}
+
+        //if (collision.transform.tag == "Ground")//땅에서 탈출한 시점에 실행됨
+        //{
+        //    this.isGrounded = false;
+        //    this.dir.y -= this.gravity * Time.deltaTime;
+
+        //}
+
+        //this.player.transform.Translate(this.dir * Time.deltaTime);
+
         if (Input.GetAxisRaw("Horizontal") < 0)
         {
             mySpriteRenderer.flipX = true;
@@ -102,17 +119,27 @@ public class PlayerFSMManager : MonoBehaviour {
 
 
         //////////////////////////////////JUMP///////////////////////////////////
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("Jump!");
+        //if(Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    Debug.Log("Jump!");
+        //    Jump();
             
-            transform.Translate(new Vector2(moveDirection.x, jump * Time.deltaTime));
-        }
+        //    transform.Translate(new Vector2(moveDirection.x, maxJumpHeight * Time.deltaTime));
+        //}
         //////////////////////////////////JUMP///////////////////////////////////
 
         //moveDirection.y -= gravity * Time.deltaTime;    //ERROR
-        cc.Move(moveDirection * Time.deltaTime);
+        //cc.Move(moveDirection * Time.deltaTime);
     }
 
+    //public void Jump()
+    //{
+    //    if(this.isGrounded)
+    //    {
+    //        this.dir.y = this.maxJumpHeight;
+    //    }
+    //}
+
+    
 
 }
