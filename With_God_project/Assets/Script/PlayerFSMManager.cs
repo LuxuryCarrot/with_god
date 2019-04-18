@@ -11,9 +11,14 @@ public enum PlayerState
 }
 public class PlayerFSMManager : MonoBehaviour {
 
+    private Rigidbody2D rigi;
+    public float distance = 1.0f;
+    public LayerMask boxMask;
+    GameObject box;
+
+
     public PlayerState currentState;
     public PlayerState startState;
-    public CharacterController cc;
     public float moveSpeed;
     public float fallSpeed;
 
@@ -35,7 +40,6 @@ public class PlayerFSMManager : MonoBehaviour {
     {
         moveSpeed = 0.5f;
         fallSpeed = -20.0f;
-        cc = GetComponent<CharacterController>();
 
         animator = GetComponent<Animator>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
@@ -59,7 +63,7 @@ public class PlayerFSMManager : MonoBehaviour {
     private void Start() {
 
         SetState(startState);
-
+        rigi = GetComponent<Rigidbody2D>();
     }
 
 
@@ -103,10 +107,27 @@ public class PlayerFSMManager : MonoBehaviour {
         }
         //////////////////////////////////RUN///////////////////////////////////
 
-            
+        Physics2D.queriesStartInColliders = false;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right * transform.localScale.x, distance, boxMask);
+
+        if (hit.collider != null && hit.collider.gameObject.tag == "pushable" && Input.GetKey(KeyCode.E))
+        {
+            box = hit.collider.gameObject;
+            box.GetComponent<FixedJoint2D>().enabled = true;
+            box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
+        }
+        else if (Input.GetKeyUp(KeyCode.E))
+        {
+            box.GetComponent<FixedJoint2D>().enabled = false;
+        }
+
     }
 
-
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawLine(transform.position, (Vector2)transform.position + Vector2.right * transform.localScale.x * distance);
+    }
     //void OnCollisionEnter2D(Collision2D col)
     //{
     //    if (col.transform.tag == "Ground")

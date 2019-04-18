@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_J : PlayerFSMState {
+public class Player_J : PlayerFSMState
+{
 
     private Transform _transform;
     private bool _isJumping;
