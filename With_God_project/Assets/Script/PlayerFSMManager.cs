@@ -31,14 +31,14 @@ public class PlayerFSMManager : MonoBehaviour {
 
     private Vector2 moveDirection = Vector2.zero;
     //public Vector2 gravity = new Vector3(0, -10);
-    bool isJumping;
+    int PlayerAnimState = 0;
 
 
     Dictionary<PlayerState, PlayerFSMState> states = new Dictionary<PlayerState, PlayerFSMState>();
 
     private void Awake()
     {
-        moveSpeed = 0.5f;
+        moveSpeed = 2.5f;
         fallSpeed = -20.0f;
 
         animator = GetComponent<Animator>();
@@ -46,8 +46,8 @@ public class PlayerFSMManager : MonoBehaviour {
 
         states.Add(PlayerState.IDLE, GetComponent<Player_S>());
         states.Add(PlayerState.RUN, GetComponent<Player_R>());
+        animator.SetBool("isWalking", false);
 
-        animator.SetBool("isRunning", false);
     }
     public void SetState(PlayerState newState)
     {
@@ -61,7 +61,7 @@ public class PlayerFSMManager : MonoBehaviour {
     }
     // Use this for initialization
     private void Start() {
-
+        
         SetState(startState);
         rigi = GetComponent<Rigidbody2D>();
     }
@@ -76,6 +76,7 @@ public class PlayerFSMManager : MonoBehaviour {
         if (Input.GetAxisRaw("Horizontal") < 0)
         {
             mySpriteRenderer.flipX = true;
+            
             animator.SetBool("isWalking", true);
 
             transform.Translate(new Vector2(moveDirection.x, 0));
@@ -97,12 +98,14 @@ public class PlayerFSMManager : MonoBehaviour {
         //////////////////////////////////RUN///////////////////////////////////
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            moveSpeed = 1.0f;
+            moveSpeed = 5.0f;
+
             animator.SetBool("isRunning", true);
+
         }
         else if(Input.GetKeyUp(KeyCode.LeftShift))
         {
-            moveSpeed = 0.5f;
+            moveSpeed = 2.5f;
             animator.SetBool("isRunning", false);
         }
         //////////////////////////////////RUN///////////////////////////////////
