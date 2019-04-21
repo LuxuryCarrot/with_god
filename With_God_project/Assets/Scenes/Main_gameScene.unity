@@ -367,6 +367,7 @@ GameObject:
   - component: {fileID: 464957543}
   - component: {fileID: 464957542}
   - component: {fileID: 464957541}
+  - component: {fileID: 464957544}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -402,7 +403,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 50
   field of view: 60
   orthographic: 1
   orthographic size: 3.5206532
@@ -434,6 +435,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &464957544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 464957540}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b1ddb168a4609d4293f6e1fd258ed7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1483190439}
+  bounds: 0
+  minCameraPos: {x: 1, y: 3, z: 0}
+  maxCameraPos: {x: 10, y: 0, z: 0}
 --- !u!1 &820093952
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,7 +860,7 @@ GameObject:
   - component: {fileID: 1483190446}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
