@@ -49,20 +49,10 @@ public class PlayerFSMManager : MonoBehaviour {
         animator.SetBool("isWalking", false);
 
     }
-    public void SetState(PlayerState newState)
-    {
-        foreach (PlayerFSMState fsm in states.Values)
-        {
-            fsm.enabled = false;
-        }
-       
-        states[newState].enabled = true;
-        currentState = newState;
-    }
+
     // Use this for initialization
     private void Start() {
         
-        SetState(startState);
         rigi = GetComponent<Rigidbody2D>();
     }
 
@@ -90,7 +80,6 @@ public class PlayerFSMManager : MonoBehaviour {
         if(Input.GetAxisRaw("Horizontal") == 0)                               
         {
             animator.SetBool("isWalking", false);
-            SetState(PlayerState.IDLE);
         }
         //////////////////////////////////WALK//////////////////////////////////
 
