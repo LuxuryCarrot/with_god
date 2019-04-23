@@ -69,7 +69,7 @@ public class PlayerFSMManager : MonoBehaviour {
             
             animator.SetBool("isWalking", true);
 
-            //transform.Translate(new Vector2(moveDirection.x, 0));
+            transform.Translate(new Vector2(moveDirection.x, 0));
         }                                                                     
         if(Input.GetAxisRaw("Horizontal") > 0)                                
         {                                                                     
