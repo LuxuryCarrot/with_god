@@ -12,7 +12,7 @@ public enum PlayerState
 public class PlayerFSMManager : MonoBehaviour {
 
     private Rigidbody2D rigi;
-    public float distance = 1.0f;
+    public float distance = 5.0f; //raycast 길이
     public LayerMask boxMask;
     GameObject box;
 
@@ -28,8 +28,11 @@ public class PlayerFSMManager : MonoBehaviour {
     public Collision col;
     public Animator animator;
     public SpriteRenderer mySpriteRenderer;
+    
 
     private Vector2 moveDirection = Vector2.zero;
+    private RaycastHit[] hits;
+    public LayerMask checkLayer;
     //public Vector2 gravity = new Vector3(0, -10);
     int PlayerAnimState = 0;
 
@@ -38,7 +41,7 @@ public class PlayerFSMManager : MonoBehaviour {
 
     private void Awake()
     {
-        moveSpeed = 2.5f;
+        moveSpeed = 1.5f;
         fallSpeed = -20.0f;
 
         animator = GetComponent<Animator>();
@@ -87,14 +90,14 @@ public class PlayerFSMManager : MonoBehaviour {
         //////////////////////////////////RUN///////////////////////////////////
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            moveSpeed = 5.0f;
+            moveSpeed = 3.0f;
 
             animator.SetBool("isRunning", true);
 
         }
         else if(Input.GetKeyUp(KeyCode.LeftShift))
         {
-            moveSpeed = 2.5f;
+            moveSpeed = 1.5f;
             animator.SetBool("isRunning", false);
         }
         //////////////////////////////////RUN///////////////////////////////////
