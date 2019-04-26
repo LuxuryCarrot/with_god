@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class CameraMove : MonoBehaviour
 {
+    // 카메라 흔들림 효과
+    public float shakeTimer;
+    public float shakeAmount;
+
     private Vector2 velocity;
 
     private float smoothTimeX;
@@ -27,11 +31,32 @@ public class CameraMove : MonoBehaviour
 
         transform.position = new Vector3(posX, posY, transform.position.z);
 
+        if ((Input.GetKeyUp(KeyCode.RightArrow)) || (Input.GetKeyUp(KeyCode.LeftArrow)))
+        {
+            ShakeCamera(0.08f, 0.08f);
+        }
+
         if (bounds)
         {
             transform.position = new Vector3(Mathf.Clamp(transform.position.x, minCameraPos.x, maxCameraPos.x),
                 Mathf.Clamp(transform.position.y, minCameraPos.y, maxCameraPos.y),
                 Mathf.Clamp(transform.position.z, minCameraPos.z, maxCameraPos.z));
         }
+    }
+
+    private void Update()
+    {
+        if(shakeTimer >= 0)
+        {
+            Vector2 ShakePos = Random.insideUnitCircle * shakeAmount;
+            transform.position = new Vector3(transform.position.x + ShakePos.x, transform.position.y, transform.position.z);
+            shakeTimer -= Time.deltaTime;
+        }
+    }
+
+    public void ShakeCamera(float shakePwr, float shakeDur)
+    {
+        shakeAmount = shakePwr;
+        shakeTimer = shakeDur;
     }
 }
