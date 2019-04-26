@@ -16,6 +16,7 @@ TagManager:
   - MiddleBackGround4
   - MiddleBackGround5
   - BackGround
+  - MiddleBackGround0
   layers:
   - Default
   - TransparentFX

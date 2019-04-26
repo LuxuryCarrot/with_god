@@ -1437,7 +1437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9502dd3f3a91eab47b06cca266fa3e67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Front_Scroll_Speed: 0
+  Middle_0_Scroll_Speed: 0
   Middle_1_Scroll_Speed: 0
   Middle_2_Scroll_Speed: 0
   Middle_3_Scroll_Speed: 0
@@ -4334,7 +4334,7 @@ GameObject:
   - component: {fileID: 2020854516}
   m_Layer: 0
   m_Name: FrontGround
-  m_TagString: FrontBackGround
+  m_TagString: MiddleBackGround0
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
