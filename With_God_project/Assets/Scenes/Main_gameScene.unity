@@ -804,7 +804,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 464957540}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 27, y: -0.8, z: -10}
+  m_LocalPosition: {x: -1.5, y: -0.8, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1284,7 +1284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 798207913}
   m_Layer: 0
-  m_Name: '#1_6'
+  m_Name: 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1342,11 +1342,7 @@ Transform:
   - {fileID: 1106782164}
   - {fileID: 1037551903}
   - {fileID: 145453076}
-<<<<<<< HEAD
   - {fileID: 1742236021}
-  - {fileID: 1770872668}
-=======
->>>>>>> 2f21d8a9c6e255c3f4f88eaae91a8c7f45acc76d
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1462,7 +1458,7 @@ GameObject:
   m_Component:
   - component: {fileID: 992704527}
   m_Layer: 0
-  m_Name: '#1_2'
+  m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1493,7 +1489,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1013869391}
   m_Layer: 0
-  m_Name: '#1_1'
+  m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2084,7 +2080,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1377538762}
   m_Layer: 0
-  m_Name: '#1_4'
+  m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2115,7 +2111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1395630240}
   m_Layer: 0
-  m_Name: '#1_3'
+  m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2533,9 +2529,6 @@ MonoBehaviour:
   xMove: 0
   animator: {fileID: 0}
   mySpriteRenderer: {fileID: 0}
-  checkLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &1483190446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3017,7 +3010,7 @@ Animator:
   m_GameObject: {fileID: 1694961829}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 881a846fc6b0bc74aa80cbe1086f513f, type: 2}
+  m_Controller: {fileID: 9100000, guid: cc98d2d449fb5a246a9a5129f1610c0b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3096,13 +3089,8 @@ GameObject:
   - component: {fileID: 1742236020}
   - component: {fileID: 1742236019}
   m_Layer: 0
-<<<<<<< HEAD
-  m_Name: sight
-  m_TagString: Untagged
-=======
   m_Name: sight_0
-  m_TagString: Sight
->>>>>>> 2f21d8a9c6e255c3f4f88eaae91a8c7f45acc76d
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3178,11 +3166,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1742236018}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 46.39, y: -2.26, z: 0}
+  m_LocalPosition: {x: 38.95, y: -2.57, z: 0}
   m_LocalScale: {x: 1, y: 0.5625, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 820093953}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1760732391
 GameObject:
@@ -3259,48 +3247,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1770872667
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1770872668}
-  - component: {fileID: 1770872669}
-  m_Layer: 0
-  m_Name: sightJudge
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1770872668
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1770872667}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.95, y: -2.57, z: 0}
-  m_LocalScale: {x: 1, y: 0.5625, z: 1}
-  m_Children: []
-  m_Father: {fileID: 820093953}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1770872669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1770872667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc68e9d63bad13548802615bd23e1dec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  sight: {fileID: 1742236018}
 --- !u!1 &1785694928
 GameObject:
   m_ObjectHideFlags: 0
@@ -4293,7 +4239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2056535201}
   m_Layer: 0
-  m_Name: '#1_5'
+  m_Name: 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

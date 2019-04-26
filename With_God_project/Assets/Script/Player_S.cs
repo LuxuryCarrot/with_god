@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DogSight : MonoBehaviour {
+public class Player_S : PlayerFSMState {
 
 	// Use this for initialization
 	void Start () {

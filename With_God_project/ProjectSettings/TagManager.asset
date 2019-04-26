@@ -6,9 +6,6 @@ TagManager:
   tags:
   - Ground
   - pushable
-  - Wall
-  - Box
-  - Sight
   layers:
   - Default
   - TransparentFX

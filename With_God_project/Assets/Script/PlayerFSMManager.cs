@@ -47,7 +47,8 @@ public class PlayerFSMManager : MonoBehaviour {
         animator = GetComponent<Animator>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
 
-  
+        states.Add(PlayerState.IDLE, GetComponent<Player_S>());
+        states.Add(PlayerState.RUN, GetComponent<Player_R>());
         animator.SetBool("isWalking", false);
 
     }
