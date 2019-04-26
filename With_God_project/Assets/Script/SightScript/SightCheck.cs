@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SightCheck : MonoBehaviour {
 
@@ -26,6 +27,7 @@ public class SightCheck : MonoBehaviour {
         if (hit.collider != null && hit.collider.gameObject.tag == "Player")
         {
             Player.SetActive(false);
+            SceneManager.LoadScene("StartScene");
         }
 
     }
