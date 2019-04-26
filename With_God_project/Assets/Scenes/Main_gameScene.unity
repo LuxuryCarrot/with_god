@@ -1342,7 +1342,6 @@ Transform:
   - {fileID: 1106782164}
   - {fileID: 1037551903}
   - {fileID: 145453076}
-  - {fileID: 1742236021}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2529,6 +2528,9 @@ MonoBehaviour:
   xMove: 0
   animator: {fileID: 0}
   mySpriteRenderer: {fileID: 0}
+  checkLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &1483190446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3010,7 +3012,7 @@ Animator:
   m_GameObject: {fileID: 1694961829}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cc98d2d449fb5a246a9a5129f1610c0b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 881a846fc6b0bc74aa80cbe1086f513f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3090,7 +3092,7 @@ GameObject:
   - component: {fileID: 1742236019}
   m_Layer: 0
   m_Name: sight_0
-  m_TagString: Untagged
+  m_TagString: Sight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3166,11 +3168,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1742236018}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.95, y: -2.57, z: 0}
+  m_LocalPosition: {x: 46.39, y: -2.26, z: 0}
   m_LocalScale: {x: 1, y: 0.5625, z: 1}
   m_Children: []
-  m_Father: {fileID: 820093953}
-  m_RootOrder: 10
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1760732391
 GameObject:
