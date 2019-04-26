@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 152322266}
   m_Layer: 0
   m_Name: MiddleGround4
-  m_TagString: MiddleBackGround5
+  m_TagString: MiddleBackGround4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
