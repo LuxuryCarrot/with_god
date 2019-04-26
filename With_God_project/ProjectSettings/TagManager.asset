@@ -9,6 +9,13 @@ TagManager:
   - Wall
   - Box
   - Sight
+  - FrontBackGround
+  - MiddleBackGround1
+  - MiddleBackGround2
+  - MiddleBackGround3
+  - MiddleBackGround4
+  - MiddleBackGround5
+  - BackGround
   layers:
   - Default
   - TransparentFX
