@@ -17,6 +17,7 @@ TagManager:
   - MiddleBackGround5
   - BackGround
   - MiddleBackGround0
+  - subCamera
   layers:
   - Default
   - TransparentFX
