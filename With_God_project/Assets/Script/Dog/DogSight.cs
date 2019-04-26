@@ -2,15 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DogSight : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+public class DogSight : MonoBehaviour
+{
+    public Animator anim;
+    public bool judge;
+    public GameObject sight;
+
+    private void Awake()
+    {
+        anim = GetComponentInChildren<Animator>();
+        judge = GetComponent<Animator>();
+    }
+
+    void Start () {
 		
 	}
 	
-	// Update is called once per frame
 	void Update () {
+
+        if (Input.GetKeyDown(KeyCode.Z))
+            sight.SetActive(false);
 		
 	}
 }
