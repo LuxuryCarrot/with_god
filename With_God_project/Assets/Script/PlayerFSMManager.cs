@@ -34,7 +34,6 @@ public class PlayerFSMManager : MonoBehaviour {
     private RaycastHit[] hits;
     public LayerMask checkLayer;
     //public Vector2 gravity = new Vector3(0, -10);
-    int PlayerAnimState = 0;
 
 
     Dictionary<PlayerState, PlayerFSMState> states = new Dictionary<PlayerState, PlayerFSMState>();
