@@ -34,10 +34,10 @@ public class BackGroundSecen_1_Move : MonoBehaviour {
         //MiddleBackGround5 = GameObject.FindGameObjectWithTag("MiddleBackGround5");
 
         //Front_Scroll_Speed = 1.1f;
-        Middle_0_Scroll_Speed = 1.1f;
-        Middle_1_Scroll_Speed = 0.9f;
-        Middle_2_Scroll_Speed = 0.7f;
-        Middle_3_Scroll_Speed = 0.5f;
+        Middle_0_Scroll_Speed = 1.0f;
+        Middle_1_Scroll_Speed = 0.65f;
+        Middle_2_Scroll_Speed = 0.6f;
+        Middle_3_Scroll_Speed = 0.1f;
         //Middle_4_Scroll_Speed = 0.3f;
         //Middle_5_Scroll_Speed = 0.1f;
 
