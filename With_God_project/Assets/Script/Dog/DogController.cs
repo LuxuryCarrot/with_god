@@ -26,20 +26,29 @@ public class DogController : MonoBehaviour {
     {
         movementFlag = Random.Range(0, 3);
 
+        // idle
         if (movementFlag == 0)
         {
             ani.SetInteger("FLAG", (int)movementFlag);
             Sight.SetActive(false);
         }
+        // eat
         else if(movementFlag == 1)
         {
             ani.SetInteger("FLAG", (int)movementFlag);
             Sight.SetActive(false);
         }
+        // look_front
         else if(movementFlag == 2)
         {
             ani.SetInteger("FLAG", (int)movementFlag);
             Sight.SetActive(true);
+        }
+        // look_side
+        else if(movementFlag == 3)
+        {
+            ani.SetInteger("FLAG", (int)movementFlag);
+            Sight.SetActive(false);
         }
 
         yield return new WaitForSeconds(3f);
