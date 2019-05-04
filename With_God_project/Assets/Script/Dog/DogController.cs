@@ -24,7 +24,7 @@ public class DogController : MonoBehaviour {
 
     IEnumerator DogState()
     {
-        movementFlag = Random.Range(0, 3);
+        movementFlag = Random.Range(0, 5);
 
         // idle
         if (movementFlag == 0)
@@ -50,13 +50,17 @@ public class DogController : MonoBehaviour {
             ani.SetInteger("FLAG", (int)movementFlag);
             Sight.SetActive(false);
         }
+        // stare
+        else if(movementFlag == 4)
+        {
+            ani.SetInteger("FLAG", (int)movementFlag);
+            Sight.SetActive(true);
+        }
 
         yield return new WaitForSeconds(3f);
 
         StartCoroutine("DogState");
     }
-
-
 
  
 }
