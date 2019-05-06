@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum PlayerState
 {
@@ -15,6 +16,7 @@ public class PlayerFSMManager : MonoBehaviour {
     public float distance = 5.0f; //raycast 길이
     public LayerMask boxMask;
     GameObject box;
+    GameObject player;
 
 
     public PlayerState currentState;
@@ -40,6 +42,8 @@ public class PlayerFSMManager : MonoBehaviour {
 
     private void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+
         moveSpeed = 2.5f;
         fallSpeed = -20.0f;
 
@@ -112,6 +116,12 @@ public class PlayerFSMManager : MonoBehaviour {
         else if (Input.GetKeyUp(KeyCode.E))
         {
             box.GetComponent<FixedJoint2D>().enabled = false;
+        }
+
+        if(transform.position.y < -6)
+        {
+            player.SetActive(false);
+            SceneManager.LoadScene("StartScene");
         }
 
     }
