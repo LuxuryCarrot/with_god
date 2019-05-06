@@ -26,15 +26,19 @@ public class SightCheck : MonoBehaviour {
 
         if (hit.collider != null && hit.collider.gameObject.tag == "Player")
         {
-            Player.SetActive(false);
+            
             SceneManager.LoadScene("StartScene");
         }
 
     }
-
-    private void OnDrawGizmos()
+    void OnCollisionEnter2D(Collision2D coll)
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position, new Vector2(3, 4));
+        if (coll.gameObject.tag == "Player")
+        {
+            Player.SetActive(false);
+        }
+
     }
+
+
 }
