@@ -17,8 +17,8 @@ public class Player_J : PlayerFSMState
         _transform = transform;
         _isJumping = false;
         _posY = transform.position.y;
-        _gravity = 18.0f;
-        _jumpPower = 6.5f;
+        _gravity = 19.0f;
+        _jumpPower = 9.0f;
         _jumpTime = 0.0f;
     }
 

@@ -40,7 +40,7 @@ public class PlayerFSMManager : MonoBehaviour {
 
     private void Awake()
     {
-        moveSpeed = 1.7f;
+        moveSpeed = 2.5f;
         fallSpeed = -20.0f;
 
         animator = GetComponent<Animator>();
@@ -88,14 +88,14 @@ public class PlayerFSMManager : MonoBehaviour {
         //////////////////////////////////RUN///////////////////////////////////
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            moveSpeed = 2.0f;
+            moveSpeed = 3.0f;
 
             animator.SetBool("isRunning", true);
 
         }
         else if(Input.GetKeyUp(KeyCode.LeftShift))
         {
-            moveSpeed = 1.7f;
+            moveSpeed = 2.5f;
             animator.SetBool("isRunning", false);
         }
         //////////////////////////////////RUN///////////////////////////////////
