@@ -17,10 +17,13 @@ public class PlayerFSMManager : MonoBehaviour {
     public LayerMask boxMask;
     GameObject box;
     GameObject player;
+    GameObject DogCheck;
 
 
     public PlayerState currentState;
     public PlayerState startState;
+
+   
     public float moveSpeed;
     public float fallSpeed;
 
@@ -49,6 +52,7 @@ public class PlayerFSMManager : MonoBehaviour {
 
         animator = GetComponent<Animator>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
+        DogCheck = GameObject.FindGameObjectWithTag("DogCheck");
 
   
         animator.SetBool("isWalking", false);
@@ -68,41 +72,74 @@ public class PlayerFSMManager : MonoBehaviour {
         moveDirection = new Vector2(Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime, 0);
   
 
-        if (Input.GetAxisRaw("Horizontal") < 0)
+        if(DogCheck.transform.position.x < transform.position.x)
         {
-            mySpriteRenderer.flipX = true;
-            
-            animator.SetBool("isWalking", true);
+            moveSpeed = 4.0f;
+            if (Input.GetAxisRaw("Horizontal") < 0)
+            {
+                mySpriteRenderer.flipX = true;
 
-            transform.Translate(new Vector2(moveDirection.x, 0));
-        }                                                                     
-        if(Input.GetAxisRaw("Horizontal") > 0)                                
-        {                                                                     
-            mySpriteRenderer.flipX = false;                                   
-            animator.SetBool("isWalking", true);
-            transform.Translate(new Vector2(moveDirection.x, 0));
-        }                                                                     
-        if(Input.GetAxisRaw("Horizontal") == 0)                               
-        {
-            animator.SetBool("isWalking", false);
+                animator.SetBool("isRunning", true);
+
+                FindObjectOfType<AudioManager>().Play("Main_Walk");
+
+                transform.Translate(new Vector2(moveDirection.x, 0));
+            }
+            if (Input.GetAxisRaw("Horizontal") > 0)
+            {
+                mySpriteRenderer.flipX = false;
+                animator.SetBool("isRunning", true);
+                FindObjectOfType<AudioManager>().Play("Main_Walk");
+                transform.Translate(new Vector2(moveDirection.x, 0));
+            }
+            if (Input.GetAxisRaw("Horizontal") == 0)
+            {
+                animator.SetBool("isRunning", false);
+                animator.SetBool("isWalking", false);
+            }
         }
+        if (DogCheck.transform.position.x > transform.position.x)
+        {
+            moveSpeed = 2.5f;
+            if (Input.GetAxisRaw("Horizontal") < 0)
+            {
+                mySpriteRenderer.flipX = true;
+                FindObjectOfType<AudioManager>().Play("Main_Walk");
+                animator.SetBool("isWalking", true);
+
+                transform.Translate(new Vector2(moveDirection.x, 0));
+            }
+            if (Input.GetAxisRaw("Horizontal") > 0)
+            {
+                mySpriteRenderer.flipX = false;
+                FindObjectOfType<AudioManager>().Play("Main_Walk");
+                animator.SetBool("isWalking", true);
+                transform.Translate(new Vector2(moveDirection.x, 0));
+            }
+            if (Input.GetAxisRaw("Horizontal") == 0)
+            {
+                animator.SetBool("isWalking", false);
+                animator.SetBool("isRunning", false);
+            }
+        }
+        
         //////////////////////////////////WALK//////////////////////////////////
 
 
-        //////////////////////////////////RUN///////////////////////////////////
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            moveSpeed = 3.0f;
+        ////////////////////////////////////RUN///////////////////////////////////
+        //if (Input.GetKeyDown(KeyCode.LeftShift))
+        //{
+        //    moveSpeed = 3.0f;
 
-            animator.SetBool("isRunning", true);
+        //    animator.SetBool("isRunning", true);
 
-        }
-        else if(Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            moveSpeed = 2.5f;
-            animator.SetBool("isRunning", false);
-        }
-        //////////////////////////////////RUN///////////////////////////////////
+        //}
+        //else if(Input.GetKeyUp(KeyCode.LeftShift))
+        //{
+        //    moveSpeed = 2.5f;
+        //    animator.SetBool("isRunning", false);
+        //}
+        ////////////////////////////////////RUN///////////////////////////////////
 
         Physics2D.queriesStartInColliders = false;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right * transform.localScale.x, distance, boxMask);

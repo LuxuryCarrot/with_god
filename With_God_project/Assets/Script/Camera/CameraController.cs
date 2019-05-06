@@ -7,25 +7,25 @@ public class CameraController : MonoBehaviour
     public Camera mainCamera;
     public Camera subCamera;
 
-    void ShowMainCam()
+    public void ShowMainCam()
     {
         mainCamera.enabled = true;
         subCamera.enabled = false;
     }
 
-    void ShowSubCam()
+    public void ShowSubCam()
     {
         mainCamera.enabled = false;
         subCamera.enabled = true;
     }
 
-	void Start ()
+    void Start()
     {
-		
-	}
-	
-	void Update ()
+
+    }
+
+    void Update()
     {
-		
-	}
+
+    }
 }

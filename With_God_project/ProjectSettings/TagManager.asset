@@ -18,6 +18,10 @@ TagManager:
   - BackGround
   - MiddleBackGround0
   - subCamera
+  - StartCamera
+  - ChaseDog
+  - Layer_2
+  - DogCheck
   layers:
   - Default
   - TransparentFX

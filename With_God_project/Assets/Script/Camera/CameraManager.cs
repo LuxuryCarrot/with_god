@@ -2,37 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraManager : MonoBehaviour
+public class CameraManager : CameraController
 {
-    public Camera mainCamera;
-    public Camera subCamera;
+    GameObject player;
+    GameObject DogCheck;
 
-    void Start () {
-		
-	}
-
-    void Update()
+    private void Awake()
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        player = GameObject.FindGameObjectWithTag("Player");
+        DogCheck = GameObject.FindGameObjectWithTag("DogCheck");
+    }
+
+    void Start()
+    {
+
+    }
+
+    void FixedUpdate()
+    {
+        if (transform.position.x > DogCheck.transform.position.x)
+        {
+            ShowSubCam();
+        }
+
+        else if (transform.position.x < DogCheck.transform.position.x)
         {
             ShowMainCam();
         }
 
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            ShowSubCam();
-        }
-    }
-
-    void ShowMainCam()
-    {
-        mainCamera.enabled = true;
-        subCamera.enabled = false;
-    }
-
-    void ShowSubCam()
-    {
-        mainCamera.enabled = false;
-        subCamera.enabled = true;
+        //if (Input.GetKeyDown(KeyCode.V))
+        //{
+        //    ShowSubCam();
+        //}
     }
 }
