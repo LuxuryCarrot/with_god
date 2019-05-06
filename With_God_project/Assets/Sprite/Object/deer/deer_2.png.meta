@@ -1,10 +1,7 @@
 fileFormatVersion: 2
-guid: 65de2ee09efb3044b87ade2cb52a38e8
+guid: a3827408fc56e0a4fbb06f26c0cc76c2
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Fence_B_0
-    21300002: Fence_B_1
-    21300004: Fence_B_2
+  fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -43,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -85,71 +82,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Fence_B_0
-      rect:
-        serializedVersion: 2
-        x: 97
-        y: 6
-        width: 1371
-        height: 925
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5acb29dfb4e3ee7489cfe496cc29037f
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fence_B_1
-      rect:
-        serializedVersion: 2
-        x: 1879
-        y: 0
-        width: 1295
-        height: 714
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bb881ebc5477ec6419fa6b37dd6d3fe3
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fence_B_2
-      rect:
-        serializedVersion: 2
-        x: 3508
-        y: 0
-        width: 1287
-        height: 673
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a2d01f39d20f8e14a82ac5c4da60f2bc
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 11c64761c16150542894d82f4b168432
+    spriteID: 
     vertices: []
     indices: 
     edges: []
