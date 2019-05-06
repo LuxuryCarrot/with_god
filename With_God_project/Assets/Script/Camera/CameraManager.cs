@@ -6,11 +6,15 @@ public class CameraManager : CameraController
 {
     GameObject player;
     GameObject DogCheck;
+    GameObject subCamera;
+    GameObject mainCamera;
 
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         DogCheck = GameObject.FindGameObjectWithTag("DogCheck");
+        subCamera = GameObject.FindGameObjectWithTag("subCamera");
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
     void Start()
@@ -20,7 +24,7 @@ public class CameraManager : CameraController
 
     void FixedUpdate()
     {
-        if (transform.position.x > DogCheck.transform.position.x)
+        if (transform.position.x == DogCheck.transform.position.x)
         {
             ShowSubCam();
         }

@@ -60,7 +60,7 @@ public class BackGroundSecen_1_Move : MonoBehaviour
             if (Input.GetAxisRaw("Horizontal") < 0)
             {
                 //FrontBackGround.transform.Translate(new Vector2(-moveDirection.x * Front_Scroll_Speed, 0));
-                //MiddleBackGround0.transform.Translate(new Vector2(-moveDirection.x * Middle_0_Scroll_Speed, 0));
+                MiddleBackGround0.transform.Translate(new Vector2(-moveDirection.x * Middle_0_Scroll_Speed, 0));
                 MiddleBackGround1.transform.Translate(new Vector2(-moveDirection.x * Middle_1_Scroll_Speed, 0));
                 MiddleBackGround2.transform.Translate(new Vector2(-moveDirection.x * Middle_2_Scroll_Speed, 0));
                 MiddleBackGround3.transform.Translate(new Vector2(-moveDirection.x * Middle_3_Scroll_Speed, 0));
@@ -70,7 +70,7 @@ public class BackGroundSecen_1_Move : MonoBehaviour
             if (Input.GetAxisRaw("Horizontal") > 0)
             {
                 //FrontBackGround.transform.Translate(new Vector2(-moveDirection.x * Front_Scroll_Speed, 0));
-                //MiddleBackGround0.transform.Translate(new Vector2(-moveDirection.x * Middle_0_Scroll_Speed, 0));
+                MiddleBackGround0.transform.Translate(new Vector2(-moveDirection.x * Middle_0_Scroll_Speed, 0));
                 MiddleBackGround1.transform.Translate(new Vector2(-moveDirection.x * Middle_1_Scroll_Speed, 0));
                 MiddleBackGround2.transform.Translate(new Vector2(-moveDirection.x * Middle_2_Scroll_Speed, 0));
                 MiddleBackGround3.transform.Translate(new Vector2(-moveDirection.x * Middle_3_Scroll_Speed, 0));

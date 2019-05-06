@@ -8,7 +8,7 @@ public class CameraMove : MonoBehaviour
     //public float shakeTimer;
     //public float shakeAmount;
 
-    float characterPosition = 3.5f;
+    float characterPosition = 5.0f;
 
     private Vector2 velocity;
 
