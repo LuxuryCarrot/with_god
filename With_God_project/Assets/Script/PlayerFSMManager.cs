@@ -12,6 +12,7 @@ public enum PlayerState
 }
 public class PlayerFSMManager : MonoBehaviour {
 
+    AudioSource Walk_Main;
     private Rigidbody2D rigi;
     public float distance = 5.0f; //raycast 길이
     public LayerMask boxMask;
@@ -53,8 +54,8 @@ public class PlayerFSMManager : MonoBehaviour {
         animator = GetComponent<Animator>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         DogCheck = GameObject.FindGameObjectWithTag("DogCheck");
-
-  
+        Walk_Main = GetComponent<AudioSource>();
+    
         animator.SetBool("isWalking", false);
 
     }
@@ -80,8 +81,8 @@ public class PlayerFSMManager : MonoBehaviour {
                 mySpriteRenderer.flipX = true;
 
                 animator.SetBool("isRunning", true);
-
-                FindObjectOfType<AudioManager>().Play("Main_Walk");
+                Walk_Main.Play();
+                //FindObjectOfType<AudioManager>().Play("Main_Walk");
 
                 transform.Translate(new Vector2(moveDirection.x, 0));
             }
@@ -89,7 +90,8 @@ public class PlayerFSMManager : MonoBehaviour {
             {
                 mySpriteRenderer.flipX = false;
                 animator.SetBool("isRunning", true);
-                FindObjectOfType<AudioManager>().Play("Main_Walk");
+                Walk_Main.Play();
+                //FindObjectOfType<AudioManager>().Play("Main_Walk");
                 transform.Translate(new Vector2(moveDirection.x, 0));
             }
             if (Input.GetAxisRaw("Horizontal") == 0)
@@ -104,7 +106,8 @@ public class PlayerFSMManager : MonoBehaviour {
             if (Input.GetAxisRaw("Horizontal") < 0)
             {
                 mySpriteRenderer.flipX = true;
-                FindObjectOfType<AudioManager>().Play("Main_Walk");
+                //FindObjectOfType<AudioManager>().Play("Main_Walk");
+                Walk_Main.Play();
                 animator.SetBool("isWalking", true);
 
                 transform.Translate(new Vector2(moveDirection.x, 0));
@@ -112,7 +115,8 @@ public class PlayerFSMManager : MonoBehaviour {
             if (Input.GetAxisRaw("Horizontal") > 0)
             {
                 mySpriteRenderer.flipX = false;
-                FindObjectOfType<AudioManager>().Play("Main_Walk");
+                //FindObjectOfType<AudioManager>().Play("Main_Walk");
+                Walk_Main.Play();
                 animator.SetBool("isWalking", true);
                 transform.Translate(new Vector2(moveDirection.x, 0));
             }
