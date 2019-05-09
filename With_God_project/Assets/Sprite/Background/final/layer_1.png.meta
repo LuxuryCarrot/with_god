@@ -4,6 +4,8 @@ TextureImporter:
   fileIDToRecycleName:
     21300000: layer_1_0
     21300002: layer_1_1
+    21300004: layer_1_2
+    21300006: layer_1_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -86,26 +88,6 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: layer_1_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 5960
-        width: 8100
-        height: 1900
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e0f1be1f744d2414bb501c3ef56c51c7
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: layer_1_1
       rect:
         serializedVersion: 2
@@ -114,13 +96,73 @@ TextureImporter:
         width: 8100
         height: 1900
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 912566e4cba91c74887d2d88e4e9584d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer_1_0
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 5927
+        width: 958
+        height: 2044
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6d6e4d7d7b168b4da051b13b720e21c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer_1_2
+      rect:
+        serializedVersion: 2
+        x: 3340
+        y: 5915
+        width: 1536
+        height: 2136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3839fa24e2836eb46bc86d6bc0013f71
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer_1_3
+      rect:
+        serializedVersion: 2
+        x: 6019
+        y: 5984
+        width: 1559
+        height: 1975
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b74e04654d5188047bbc01d90acdb145
       vertices: []
       indices: 
       edges: []
