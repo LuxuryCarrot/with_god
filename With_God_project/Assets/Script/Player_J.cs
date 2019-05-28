@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player_J : PlayerFSMState
 {
+    public Animator animator;
 
     private Transform _transform;
     private bool _isJumping;
@@ -14,6 +15,9 @@ public class Player_J : PlayerFSMState
 
     void Awake()
     {
+        animator = GetComponent<Animator>();
+        animator.SetBool("Jumping", false);
+
         _transform = transform;
         _isJumping = false;
         _posY = transform.position.y;
@@ -26,8 +30,15 @@ public class Player_J : PlayerFSMState
     {
         if (Input.GetKeyDown(KeyCode.Space) && !_isJumping)
         {
+            animator.SetBool("Jumping", true);
+
             _isJumping = true;
             _posY = _transform.position.y;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            animator.SetBool("Jumping", false);
         }
 
         if (_isJumping)

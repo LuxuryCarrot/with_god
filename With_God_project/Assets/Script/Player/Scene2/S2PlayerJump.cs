@@ -37,6 +37,7 @@ public class S2PlayerJump : PlayerFSMState
 
             
         }
+
         if (Input.GetKeyUp(KeyCode.Space))
         {
             animator.SetBool("Jumping", false);

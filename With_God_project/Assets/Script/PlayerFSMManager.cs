@@ -11,6 +11,7 @@ public class PlayerFSMManager : MonoBehaviour {
     GameObject box;
     GameObject player;
     GameObject DogCheck;
+    GameObject Godtree; // 당산나무
     
     public float moveSpeed;
     public float fallSpeed;
@@ -33,6 +34,7 @@ public class PlayerFSMManager : MonoBehaviour {
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        Godtree = GameObject.FindGameObjectWithTag("Finish");
 
         moveSpeed = 2.5f;
         fallSpeed = -20.0f;
@@ -107,6 +109,31 @@ public class PlayerFSMManager : MonoBehaviour {
                 animator.SetBool("isWalking", true);
                 transform.Translate(new Vector2(moveDirection.x, 0));
             }
+            if (Input.GetAxisRaw("Horizontal") == 0)
+            {
+                animator.SetBool("isWalking", false);
+                animator.SetBool("isRunning", false);
+            }
+        }
+
+        // 당산나무 지났을 시
+        if (transform.position.x >= Godtree.transform.position.x)
+        {
+            moveSpeed = 2.5f;
+            animator.SetBool("isRunning", false);
+
+            if (Input.GetAxisRaw("Horizontal") < 0)
+            {
+                mySpriteRenderer.flipX = true;
+                animator.SetBool("isWalking", true);
+            }
+
+            if (Input.GetAxisRaw("Horizontal") > 0)
+            {
+                mySpriteRenderer.flipX = false;
+                animator.SetBool("isWalking", true);
+            }
+
             if (Input.GetAxisRaw("Horizontal") == 0)
             {
                 animator.SetBool("isWalking", false);

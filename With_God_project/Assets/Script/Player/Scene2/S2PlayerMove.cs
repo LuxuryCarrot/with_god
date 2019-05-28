@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class S2PlayerMove : MonoBehaviour {
 
+    public CameraMove camera;
+
     GameObject player;
 
     public float moveSpeed;
@@ -16,6 +18,8 @@ public class S2PlayerMove : MonoBehaviour {
 
     private void Awake()
     {
+        camera = GetComponent<CameraMove>();
+
         player = GameObject.FindGameObjectWithTag("Player");
 
         moveSpeed = 2.5f;

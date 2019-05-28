@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraManager : CameraController
+public class S2CameraManager : CameraController
 {
-    GameObject DogCheck;
     GameObject Player;
-    
+    GameObject Temple;
+
     private void Awake()
     {
-        DogCheck = GameObject.FindGameObjectWithTag("DogCheck");
         Player = GameObject.FindGameObjectWithTag("Player");
+        Temple = GameObject.FindGameObjectWithTag("Wall");
     }
 
     void Start()
@@ -20,12 +20,12 @@ public class CameraManager : CameraController
 
     void FixedUpdate()
     {
-        if (Player.transform.position.x >= DogCheck.transform.position.x)
+        if (Player.transform.position.x >= Temple.transform.position.x)
         {
             ShowSubCam();
         }
 
-        else if (Player.transform.position.x < DogCheck.transform.position.x)
+        else if (Player.transform.position.x < Temple.transform.position.x)
         {
             ShowMainCam();
         }
