@@ -3,13 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum PlayerState
-{
-    IDLE = 0,
-    RUN,
-    JUMP,
-    DEAD
-}
 public class PlayerFSMManager : MonoBehaviour {
 
     AudioSource Walk_Main;
@@ -19,12 +12,7 @@ public class PlayerFSMManager : MonoBehaviour {
     GameObject box;
     GameObject player;
     GameObject DogCheck;
-
-
-    public PlayerState currentState;
-    public PlayerState startState;
-
-   
+    
     public float moveSpeed;
     public float fallSpeed;
 
@@ -42,7 +30,6 @@ public class PlayerFSMManager : MonoBehaviour {
     //public Vector2 gravity = new Vector3(0, -10);
 
 
-    Dictionary<PlayerState, PlayerFSMState> states = new Dictionary<PlayerState, PlayerFSMState>();
 
     private void Awake()
     {
@@ -126,24 +113,7 @@ public class PlayerFSMManager : MonoBehaviour {
                 animator.SetBool("isRunning", false);
             }
         }
-        
-        //////////////////////////////////WALK//////////////////////////////////
 
-
-        ////////////////////////////////////RUN///////////////////////////////////
-        //if (Input.GetKeyDown(KeyCode.LeftShift))
-        //{
-        //    moveSpeed = 3.0f;
-
-        //    animator.SetBool("isRunning", true);
-
-        //}
-        //else if(Input.GetKeyUp(KeyCode.LeftShift))
-        //{
-        //    moveSpeed = 2.5f;
-        //    animator.SetBool("isRunning", false);
-        //}
-        ////////////////////////////////////RUN///////////////////////////////////
 
         Physics2D.queriesStartInColliders = false;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right * transform.localScale.x, distance, boxMask);
@@ -166,19 +136,5 @@ public class PlayerFSMManager : MonoBehaviour {
         }
 
     }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(transform.position, (Vector2)transform.position + Vector2.right * transform.localScale.x * distance);
-    }
-    //void OnCollisionEnter2D(Collision2D col)
-    //{
-    //    if (col.transform.tag == "Ground")
-    //    {
-    //        Debug.Log("바닥");
-    //        this.transform.Translate(new Vector2(moveDirection.x, 10));
-    //    }
-    //}
 }
 
