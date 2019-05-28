@@ -16,7 +16,7 @@ public class PlayerBehaviour : MonoBehaviour {
     private Vector2 PlayerMoveDirection = Vector2.zero; // Player (x, y) 좌표값 초기화
     private LayerMask BoxMask;       // 레이캐스팅으로 게임 오브젝트를 판별하는데 사용됨
     private LayerMask GroundMask;
-    private RaycastHit2D[] PlayerFindObj; // 플레이어가 오브젝트와 충돌하였을때 오브젝트를 판별하기 위해 사용함
+
     private GameObject Box;
     private GameObject Ground;
 
@@ -44,7 +44,8 @@ public class PlayerBehaviour : MonoBehaviour {
 
         //////////////////////////////////RAY//////////////////////////////////
         Physics2D.queriesStartInColliders = false; // 콜라이더 2D 안에서 시작된 물리 쿼리가 시작된 콜라이더를 감지할 수 있습니다.
-        PlayerFindObj = Physics2D.RaycastAll(transform.position, Vector2.right * transform.localScale.x, distance);
+
+
 
 
         //if ()
