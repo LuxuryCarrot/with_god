@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class PlayerFSMManager : MonoBehaviour {
 
     AudioSource Walk_Main;
-    private Rigidbody2D rigi;
     public float distance = 5.0f; //raycast 길이
     public LayerMask boxMask;
     GameObject box;
@@ -50,7 +49,8 @@ public class PlayerFSMManager : MonoBehaviour {
     // Use this for initialization
     private void Start() {
         
-        rigi = GetComponent<Rigidbody2D>();
+
+
     }
 
 
