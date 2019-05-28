@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: hood_run_j
+  m_Name: P_hood_Run_J
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
