@@ -12,8 +12,8 @@ public class CameraMove : MonoBehaviour
 
     private Vector2 velocity;
 
-    private float smoothTimeX;
-    private float smoothTimeY;
+    private float smoothTimeX = 0.0f;
+    private float smoothTimeY = 0.0f;
 
     public GameObject player;
 

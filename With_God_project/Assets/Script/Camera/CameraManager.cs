@@ -4,17 +4,11 @@ using UnityEngine;
 
 public class CameraManager : CameraController
 {
-    GameObject player;
     GameObject DogCheck;
-    GameObject subCamera;
-    GameObject mainCamera;
-
+    
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         DogCheck = GameObject.FindGameObjectWithTag("DogCheck");
-        subCamera = GameObject.FindGameObjectWithTag("subCamera");
-        mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
     void Start()
