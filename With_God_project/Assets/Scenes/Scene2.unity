@@ -2988,7 +2988,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -2.5923038, y: 0.8000959}
+  m_ConnectedAnchor: {x: -2.6040957, y: 0.7529022}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -5998,7 +5998,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -2.6736217, y: 0.66541284}
-  m_ConnectedAnchor: {x: 0.08538629, y: -0.05684001}
+  m_ConnectedAnchor: {x: 0.05498614, y: -0.047802225}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -8146,11 +8146,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4553200604573550, guid: 25396118223205b45a1ff41c9f27cbdc, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 141.28
+      value: 141.29
       objectReference: {fileID: 0}
     - target: {fileID: 4553200604573550, guid: 25396118223205b45a1ff41c9f27cbdc, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.31
+      value: 3.35
       objectReference: {fileID: 0}
     - target: {fileID: 4553200604573550, guid: 25396118223205b45a1ff41c9f27cbdc, type: 2}
       propertyPath: m_LocalPosition.z
@@ -8287,29 +8287,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4103448636104828, guid: 4a12d7119ff56b1429003bb1683b2b43,
     type: 2}
   m_PrefabInternal: {fileID: 1963553313}
---- !u!233 &1121660934
-HingeJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1121660928}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 1128228625}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0.044716258, y: -0.066163085}
-  m_ConnectedAnchor: {x: 0.21438366, y: 0.5711824}
-  m_UseMotor: 0
-  m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 1
-  m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 5
 --- !u!1001 &1123713566
 Prefab:
   m_ObjectHideFlags: 0
@@ -8417,7 +8394,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 171.68, y: 10.54}
+  m_ConnectedAnchor: {x: 170.73, y: 10.52}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!50 &1128228625
@@ -8493,7 +8470,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1128228623}
   m_LocalRotation: {x: -0.035984874, y: 0.002312472, z: 0.0640884, w: 0.9972926}
-  m_LocalPosition: {x: 171.68, y: 10.54, z: -1.3200002}
+  m_LocalPosition: {x: 170.73, y: 10.52, z: -1.3200002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -14938,7 +14915,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1228035737996010, guid: 4a12d7119ff56b1429003bb1683b2b43, type: 2}
       propertyPath: m_Name
-      value: rope3 (5)__ppull
+      value: rope3 (5)
       objectReference: {fileID: 0}
     - target: {fileID: 233462632452097138, guid: 4a12d7119ff56b1429003bb1683b2b43,
         type: 2}
