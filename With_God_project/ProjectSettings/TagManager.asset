@@ -22,6 +22,9 @@ TagManager:
   - ChaseDog
   - Layer_2
   - DogCheck
+  - StoneTower
+  - Stone
+  - Wagon
   layers:
   - Default
   - TransparentFX
