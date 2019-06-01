@@ -2,26 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wagon : MonoBehaviour {
+public class Wagon : MonoBehaviour
+{
     GameObject PlayerObj;
     GameObject WagonObj;
+    GameObject Ground;
+
     float PlayerX;
     float PlayerY;
     float WagonX;
     float WagonY;
-    
-	// Use this for initialization
-	void Start () {
+    float GroundY;
+
+    // Use this for initialization
+    void Start()
+    {
         PlayerObj = GameObject.FindGameObjectWithTag("Player");
         WagonObj = GameObject.FindGameObjectWithTag("Wagon");
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        Ground = GameObject.FindGameObjectWithTag("Ground");
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         PlayerX = PlayerObj.transform.position.x;
         PlayerY = PlayerObj.transform.position.y;
         WagonX = WagonObj.transform.position.x;
         WagonY = WagonObj.transform.position.y;
+        GroundY = Ground.transform.position.y;
+        if (WagonY > GroundY + 1.59)
+        {
+            transform.Translate(new Vector2(0, -2f * 1.95f * Time.deltaTime));
+        }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -41,5 +53,10 @@ public class Wagon : MonoBehaviour {
             transform.Translate(new Vector2(1.35f * 1.95f * Time.deltaTime, 0));
 
         }
+
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
     }
 }
