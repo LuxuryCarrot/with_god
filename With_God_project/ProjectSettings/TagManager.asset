@@ -25,6 +25,7 @@ TagManager:
   - StoneTower
   - Stone
   - Wagon
+  - EndPos
   layers:
   - Default
   - TransparentFX

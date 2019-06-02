@@ -5,34 +5,34 @@ using UnityEngine;
 public class Stone : MonoBehaviour {
     GameObject PlayerObj;
     GameObject StoneObj;
+    GameObject EndPos;
 
-    float PlayerForce = 0.0f;
+    Vector2 CurrPosition;
+    Vector2 EndPosition;
+
+    float speed = 3f;
 	// Use this for initialization
 	void Start () {
         PlayerObj = GameObject.FindGameObjectWithTag("Player");
         StoneObj = GameObject.FindGameObjectWithTag("Stone");
+        EndPos = GameObject.FindGameObjectWithTag("EndPos");
 	}
 	
-
 	// Update is called once per frame
 	void Update () {
-        
+		
 	}
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.gameObject.tag == "Player" && Input.GetKey(KeyCode.DownArrow))
+        if (collision.gameObject.tag == "Player" && Input.GetKeyUp(KeyCode.LeftControl))
         {
-            PlayerForce -= 0.1f;
-            Debug.Log("Down");
-        }
-        if (other.gameObject.tag == "Player" && Input.GetKey(KeyCode.UpArrow))
-        {
-            PlayerForce += 0.1f;
-            Debug.Log("Up");
-        }
-        if (other.gameObject.tag == "Player" && Input.GetKeyUp(KeyCode.LeftControl))
-        {
-            transform.Translate(new Vector2(0.1f * 2.5f * Time.deltaTime, PlayerForce));
+            Debug.Log("up");
+            CurrPosition = transform.position;
+            EndPosition = new Vector2(EndPos.transform.position.x, EndPos.transform.position.y);
+            float step = speed * Time.deltaTime;
+            transform.position = Vector2.MoveTowards(CurrPosition, EndPosition, step);
+
         }
     }
+    
 }
