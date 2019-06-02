@@ -25,6 +25,9 @@ TagManager:
   - StoneTower
   - Stone
   - Wagon
+  - rope
+  - rope_b
+  - rope_w
   layers:
   - Default
   - TransparentFX

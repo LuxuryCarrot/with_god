@@ -29,6 +29,8 @@ public class S2PlayerMove : MonoBehaviour {
         mySpriteRenderer = GetComponent<SpriteRenderer>();
 
         animator.SetBool("Walking", false);
+        animator.SetBool("push", false);
+        animator.SetBool("pull", false);
     }
 
     void Start () {
@@ -54,6 +56,12 @@ public class S2PlayerMove : MonoBehaviour {
             animator.SetBool("Walking", true);
 
             transform.Translate(new Vector2(moveDirection.x, 0));
+
+            if (Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                animator.SetBool("Walking", false);
+                animator.SetBool("pull", true);
+            }
         }
         if (Input.GetAxisRaw("Horizontal") == 0)
         {
