@@ -26,7 +26,7 @@ public class Stone : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Player" && Input.GetKeyUp(KeyCode.LeftControl))
         {
-            Debug.Log("up");
+            Debug.Log("up")
             CurrPosition = transform.position;
             EndPosition = new Vector2(EndPos.transform.position.x, EndPos.transform.position.y);
             float step = speed * Time.deltaTime;
