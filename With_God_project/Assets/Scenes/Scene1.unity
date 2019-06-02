@@ -297,6 +297,16 @@ Prefab:
       propertyPath: m_Name
       value: Chasing_Doggie
       objectReference: {fileID: 0}
+    - target: {fileID: 61278070751920098, guid: 49c24dc0f2ddb3643a1be7834900bc89,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 0.82239246
+      objectReference: {fileID: 0}
+    - target: {fileID: 61278070751920098, guid: 49c24dc0f2ddb3643a1be7834900bc89,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 1.6494198
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 50937280617399678, guid: 49c24dc0f2ddb3643a1be7834900bc89, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 49c24dc0f2ddb3643a1be7834900bc89, type: 2}
@@ -3887,7 +3897,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7059865721346064898c397fc9d3cf89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
   animator: {fileID: 0}
   _gravity: 0
   _jumpPower: 0

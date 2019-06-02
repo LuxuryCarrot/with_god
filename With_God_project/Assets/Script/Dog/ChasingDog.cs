@@ -24,12 +24,12 @@ public class ChasingDog : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(DogCheck.transform.position.x < Player.transform.position.x && Player.transform.position.x < 193)
+        if(DogCheck.transform.position.x < Player.transform.position.x && Player.transform.position.x < 190)
         {
             transform.Translate(new Vector2(1 * Speed * Time.deltaTime, 0));
 
         }
-        if(Player.transform.position.x >= 193)
+        if(Player.transform.position.x >= 190)
         {
             transform.Translate(new Vector2(-1 * Speed * Time.deltaTime, 0));
             mySpriteRenderer.flipX = true;

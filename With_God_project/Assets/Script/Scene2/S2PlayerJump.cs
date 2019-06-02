@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class S2PlayerJump : PlayerFSMState
+public class S2PlayerJump : MonoBehaviour
 {
     public Animator animator;
 
