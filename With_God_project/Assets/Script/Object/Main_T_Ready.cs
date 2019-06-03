@@ -9,7 +9,9 @@ public class Main_T_Ready : MonoBehaviour
     GameObject StoneTower;
     GameObject EndPos;
     GameObject Position;
-    float EndPosX, EndPosY;
+    private float EndPosX, EndPosY;
+    private float PlayerPosX, PlayerPosY;
+    private float StoneTowerPosX, StoneTowerPosY;
     public float Xpos, Ypos;
     bool enter = true;
     bool StoneTowerPosCheck;
@@ -30,13 +32,28 @@ public class Main_T_Ready : MonoBehaviour
     }
     private void Update()
     {
-        //StoneTowerPosCheck = ()
+        PlayerPosX = Player.transform.position.x;
+        PlayerPosY = Player.transform.position.y;
+        StoneTowerPosX = StoneTower.transform.position.x;
+        StoneTowerPosY = StoneTower.transform.position.y;
 
-        if ()
+        StoneTowerPosCheck = (PlayerPosX > StoneTowerPosX - 0.75f && PlayerPosX < StoneTowerPosX + 0.65f
+                              &&PlayerPosY > StoneTowerPosY - 0.9f && PlayerPosY < StoneTowerPosY + 0.9f);
+
+        if (StoneTowerPosCheck && Input.GetKeyDown(KeyCode.LeftControl))
         {
-
+            Stone.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z - 0.000001f);
         }
-        Position.transform.position = new Vector2(StoneTower.transform.position.x - Xpos, StoneTower.transform.position.y + Ypos);
+        if (StoneTowerPosCheck && Input.GetKey(KeyCode.LeftControl) && EndPosX < 73f)
+        {
+            enter = false;
+            Debug.Log("in");
+            EndPosX += 0.1f;
+            EndPos.transform.position = new Vector2(EndPosX, EndPosY);
+        }
+
+        //Position.transform.position = new Vector2(StoneTower.transform.position.x - Xpos, StoneTower.transform.position.y + Ypos); //스프라이트 위치값찾기
+
         if (enter == true)
         {
             EndPosX = Player.transform.position.x;
@@ -50,19 +67,19 @@ public class Main_T_Ready : MonoBehaviour
     // Update is called once per frame
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.LeftControl) && (Player.transform.position != Stone.transform.position))
-        {
-            Stone.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z - 0.000001f);
-        }
-        if (collision.gameObject.tag == "Player" && Input.GetKey(KeyCode.LeftControl) && EndPosX < 73f)
-        {
-            enter = false;
-            Debug.Log("in");
-            EndPosX += 0.1f;
-            EndPos.transform.position = new Vector2(EndPosX, EndPosY);
+        //if (collision.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.LeftControl) && (Player.transform.position != Stone.transform.position))
+        //{
+        //    Stone.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z - 0.000001f);
+        //}
+        //if (collision.gameObject.tag == "Player" && Input.GetKey(KeyCode.LeftControl) && EndPosX < 73f)
+        //{
+        //    enter = false;
+        //    Debug.Log("in");
+        //    EndPosX += 0.1f;
+        //    EndPos.transform.position = new Vector2(EndPosX, EndPosY);
 
           
-        }
+        //}
         if (collision.gameObject.tag == "Player" && Input.GetKey(KeyCode.UpArrow) && EndPosY < 2.5f)
         {
             enter = false;
