@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Main_T_Ready : MonoBehaviour {
+public class Main_T_Ready : MonoBehaviour
+{
     GameObject Stone;
     GameObject Player;
     GameObject StoneTower;
@@ -10,7 +11,8 @@ public class Main_T_Ready : MonoBehaviour {
     float EndPosX, EndPosY;
     bool enter = true;
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         Stone = GameObject.FindGameObjectWithTag("Stone");
         Player = GameObject.FindGameObjectWithTag("Player");
         StoneTower = GameObject.FindGameObjectWithTag("StoneTower");
@@ -61,5 +63,5 @@ public class Main_T_Ready : MonoBehaviour {
                 EndPos.transform.position = new Vector2(EndPosX, EndPosY);
             }
         }
-           
+    }
 }
