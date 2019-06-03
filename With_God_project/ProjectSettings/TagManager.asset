@@ -32,6 +32,9 @@ TagManager:
   - PosCheck
   - Start
   - End
+  - Bell
+  - door_c
+  - door_o
   layers:
   - Default
   - TransparentFX

@@ -32,7 +32,7 @@ public class Main_T_Ready : MonoBehaviour
         EndPosX = Player.transform.position.x;
         EndPosY = Player.transform.position.y;
 
-        
+
     }
     private void Update()
     {
@@ -44,10 +44,11 @@ public class Main_T_Ready : MonoBehaviour
         StonePosY = Stone.transform.position.y;
 
         StoneTowerPosCheck = (PlayerPosX > StoneTowerPosX - 0.75f && PlayerPosX < StoneTowerPosX + 0.65f
-                              &&PlayerPosY > StoneTowerPosY - 0.9f && PlayerPosY < StoneTowerPosY + 0.9f);
+                              && PlayerPosY > StoneTowerPosY - 0.9f && PlayerPosY < StoneTowerPosY + 0.9f);
 
         if (StoneTowerPosCheck && Input.GetKeyDown(KeyCode.LeftControl))
         {
+
             Stone.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y);
             Debug.Log("in");
 
@@ -55,30 +56,23 @@ public class Main_T_Ready : MonoBehaviour
         if (StoneTowerPosCheck && Input.GetKey(KeyCode.LeftControl) && EndPosX < 73f)
         {
             enter = false;
-            EndPosX += 0.03f;
+            EndPosX += 0.06f;
             EndPos.transform.position = new Vector2(EndPosX, EndPosY);
         }
         if (StoneTowerPosCheck && Input.GetKey(KeyCode.UpArrow) && EndPosY < 2.5f)
         {
             enter = false;
-            EndPosY += 0.03f;
+            EndPosY += 0.06f;
             EndPos.transform.position = new Vector2(EndPosX, EndPosY);
         }
         if (StoneTowerPosCheck && Input.GetKey(KeyCode.DownArrow) && EndPosY > -2.3f)
         {
             enter = false;
-            EndPosY -= 0.03f;
+            EndPosY -= 0.06f;
             EndPos.transform.position = new Vector2(EndPosX, EndPosY);
         }
 
-        //if (StoneTowerPosCheck && Input.GetKeyUp(KeyCode.LeftControl) /*&& StonePosX < EndPosX && StonePosY < EndPosY*/)
-        //{
-        //    Debug.Log("asdkjo");
-        //    CurrPosition = Player.transform.position;
-        //    EndPosition = EndPos.transform.position;
-        //    float step = 0.2f * Time.deltaTime;
-        //    Stone.transform.position = Vector2.MoveTowards(new Vector2(CurrPosition.x, CurrPosition.y), new Vector2(EndPosition.x, EndPosition.y), step);
-        //}
+
         if (StoneTowerPosCheck == false)
         {
             enter = true;
@@ -91,6 +85,10 @@ public class Main_T_Ready : MonoBehaviour
             EndPosX = Player.transform.position.x;
             EndPosY = Player.transform.position.y;
             EndPos.transform.position = new Vector2(EndPosX, EndPosY);
+        }
+        if (Stone.transform.position == EndPos.transform.position)
+        {
+            enter = true;
         }
     }
 }
