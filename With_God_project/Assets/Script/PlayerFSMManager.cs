@@ -59,6 +59,9 @@ public class PlayerFSMManager : MonoBehaviour {
 
 	// Update is called once per frame
 	private void Update () {
+
+       
+
         moveDirection = new Vector2(Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime, 0);
   
 

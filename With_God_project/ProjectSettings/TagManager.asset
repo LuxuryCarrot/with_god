@@ -28,6 +28,7 @@ TagManager:
   - rope
   - rope_b
   - rope_w
+  - EndPos
   layers:
   - Default
   - TransparentFX

@@ -48,20 +48,21 @@ public class Main_T_Ready : MonoBehaviour
             EndPosX += 0.1f;
             EndPos.transform.position = new Vector2(EndPosX, EndPosY);
 
-            if (collision.gameObject.tag == "Player" && Input.GetKey(KeyCode.UpArrow) && EndPosY < 2.5f)
-            {
-                enter = false;
-                Debug.Log("in");
-                EndPosY += 0.1f;
-                EndPos.transform.position = new Vector2(EndPosX, EndPosY);
-            }
-            if (collision.gameObject.tag == "Player" && Input.GetKey(KeyCode.DownArrow) && EndPosY > -2.3f)
-            {
-                enter = false;
-                Debug.Log("in");
-                EndPosY -= 0.1f;
-                EndPos.transform.position = new Vector2(EndPosX, EndPosY);
-            }
+          
+        }
+        if (collision.gameObject.tag == "Player" && Input.GetKey(KeyCode.UpArrow) && EndPosY < 2.5f)
+        {
+            enter = false;
+            Debug.Log("in");
+            EndPosY += 0.1f;
+            EndPos.transform.position = new Vector2(EndPosX, EndPosY);
+        }
+        if (collision.gameObject.tag == "Player" && Input.GetKey(KeyCode.DownArrow) && EndPosY > -2.3f)
+        {
+            enter = false;
+            Debug.Log("in");
+            EndPosY -= 0.1f;
+            EndPos.transform.position = new Vector2(EndPosX, EndPosY);
         }
     }
 }
