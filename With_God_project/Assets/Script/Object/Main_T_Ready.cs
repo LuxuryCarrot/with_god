@@ -9,9 +9,13 @@ public class Main_T_Ready : MonoBehaviour
     GameObject StoneTower;
     GameObject EndPos;
     GameObject Position;
+
     private float EndPosX, EndPosY;
     private float PlayerPosX, PlayerPosY;
     private float StoneTowerPosX, StoneTowerPosY;
+    private float StonePosX, StonePosY;
+    private Vector2 CurrPosition, EndPosition;
+
     public float Xpos, Ypos;
     bool enter = true;
     bool StoneTowerPosCheck;
@@ -36,20 +40,48 @@ public class Main_T_Ready : MonoBehaviour
         PlayerPosY = Player.transform.position.y;
         StoneTowerPosX = StoneTower.transform.position.x;
         StoneTowerPosY = StoneTower.transform.position.y;
+        StonePosX = Stone.transform.position.x;
+        StonePosY = Stone.transform.position.y;
 
         StoneTowerPosCheck = (PlayerPosX > StoneTowerPosX - 0.75f && PlayerPosX < StoneTowerPosX + 0.65f
                               &&PlayerPosY > StoneTowerPosY - 0.9f && PlayerPosY < StoneTowerPosY + 0.9f);
 
         if (StoneTowerPosCheck && Input.GetKeyDown(KeyCode.LeftControl))
         {
-            Stone.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z - 0.000001f);
+            Stone.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y);
+            Debug.Log("in");
+
         }
         if (StoneTowerPosCheck && Input.GetKey(KeyCode.LeftControl) && EndPosX < 73f)
         {
             enter = false;
-            Debug.Log("in");
-            EndPosX += 0.1f;
+            EndPosX += 0.03f;
             EndPos.transform.position = new Vector2(EndPosX, EndPosY);
+        }
+        if (StoneTowerPosCheck && Input.GetKey(KeyCode.UpArrow) && EndPosY < 2.5f)
+        {
+            enter = false;
+            EndPosY += 0.03f;
+            EndPos.transform.position = new Vector2(EndPosX, EndPosY);
+        }
+        if (StoneTowerPosCheck && Input.GetKey(KeyCode.DownArrow) && EndPosY > -2.3f)
+        {
+            enter = false;
+            EndPosY -= 0.03f;
+            EndPos.transform.position = new Vector2(EndPosX, EndPosY);
+        }
+
+        //if (StoneTowerPosCheck && Input.GetKeyUp(KeyCode.LeftControl) /*&& StonePosX < EndPosX && StonePosY < EndPosY*/)
+        //{
+        //    Debug.Log("asdkjo");
+        //    CurrPosition = Player.transform.position;
+        //    EndPosition = EndPos.transform.position;
+        //    float step = 0.2f * Time.deltaTime;
+        //    Stone.transform.position = Vector2.MoveTowards(new Vector2(CurrPosition.x, CurrPosition.y), new Vector2(EndPosition.x, EndPosition.y), step);
+        //}
+        if (StoneTowerPosCheck == false)
+        {
+            enter = true;
         }
 
         //Position.transform.position = new Vector2(StoneTower.transform.position.x - Xpos, StoneTower.transform.position.y + Ypos); //스프라이트 위치값찾기
@@ -58,40 +90,6 @@ public class Main_T_Ready : MonoBehaviour
         {
             EndPosX = Player.transform.position.x;
             EndPosY = Player.transform.position.y;
-            EndPos.transform.position = new Vector2(EndPosX, EndPosY);
-        }
-
-
-    }
-
-    // Update is called once per frame
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        //if (collision.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.LeftControl) && (Player.transform.position != Stone.transform.position))
-        //{
-        //    Stone.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z - 0.000001f);
-        //}
-        //if (collision.gameObject.tag == "Player" && Input.GetKey(KeyCode.LeftControl) && EndPosX < 73f)
-        //{
-        //    enter = false;
-        //    Debug.Log("in");
-        //    EndPosX += 0.1f;
-        //    EndPos.transform.position = new Vector2(EndPosX, EndPosY);
-
-          
-        //}
-        if (collision.gameObject.tag == "Player" && Input.GetKey(KeyCode.UpArrow) && EndPosY < 2.5f)
-        {
-            enter = false;
-            Debug.Log("in");
-            EndPosY += 0.1f;
-            EndPos.transform.position = new Vector2(EndPosX, EndPosY);
-        }
-        if (collision.gameObject.tag == "Player" && Input.GetKey(KeyCode.DownArrow) && EndPosY > -2.3f)
-        {
-            enter = false;
-            Debug.Log("in");
-            EndPosY -= 0.1f;
             EndPos.transform.position = new Vector2(EndPosX, EndPosY);
         }
     }
