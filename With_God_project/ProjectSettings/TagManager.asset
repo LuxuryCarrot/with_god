@@ -32,7 +32,6 @@ TagManager:
   - PosCheck
   - Start
   - End
-  - Bell
   layers:
   - Default
   - TransparentFX

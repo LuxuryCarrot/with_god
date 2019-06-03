@@ -11,10 +11,7 @@ public class Stone : MonoBehaviour {
     private float PlayerPosX, PlayerPosY;
     private float StoneTowerPosX, StoneTowerPosY;
 
-    private Vector2 StoneMove;
-
     bool StoneTowerPosCheck;
-    bool go = false;
 
     void Start()
     {
@@ -24,9 +21,6 @@ public class Stone : MonoBehaviour {
     }
     private void Update()
     {
-        float step = 8f * Time.deltaTime;
-
-        StoneMove = new Vector2( EndPos.transform.position.x, EndPos.transform.position.y);
         PlayerPosX = Player.transform.position.x;
         PlayerPosY = Player.transform.position.y;
         StoneTowerPosX = StoneTower.transform.position.x;
@@ -38,33 +32,10 @@ public class Stone : MonoBehaviour {
         if (StoneTowerPosCheck && Input.GetKeyUp(KeyCode.LeftControl) /*&& StonePosX < EndPosX && StonePosY < EndPosY*/)
         {
             Debug.Log("asdkjo");
+            float step = 0.2f * Time.deltaTime;
 
-            go = true;
-
-        }
-        if(go == true)
-        {
-            transform.position = Vector2.MoveTowards(new Vector2(transform.position.x, transform.position.y), new Vector2(StoneMove.x, StoneMove.y), step);
-            if (transform.position == EndPos.transform.position)
-            {
-                transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y-10);
-                EndPos.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y);
-                go = false;
-            }
+            transform.position = Vector2.MoveTowards(new Vector2(transform.position.x, transform.position.y), new Vector2(EndPos.transform.position.x, EndPos.transform.position.y ), step);
         }
     }
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (go == true)
-    //    {
-    //        if (transform.position == EndPos.transform.position && collision.gameObject.tag != "Bell")
-    //        {
-    //            transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - 10);
-    //            //EndPos.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y);
-    //            go = false;
-    //        }
-    //    }
-        
-    //}
-
+     
 }
