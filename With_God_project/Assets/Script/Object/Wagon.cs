@@ -18,16 +18,17 @@ public class Wagon : MonoBehaviour
     float WagonX;
     float WagonY;
 
-    float Rope_bX;
-    float Rope_bY;
-    float Rope_mX;
-    float Rope_mY;
-    float Rope_wX;
-    float Rope_wY;
+    float speed = 0.9f;
+
+    public Animator ani;
 
     //float GroundY;
 
-    // Use this for initialization
+    private void Awake()
+    {
+        ani = GetComponent<Animator>();
+    }
+
     void Start()
     {
         PlayerObj = GameObject.FindGameObjectWithTag("Player");
@@ -49,13 +50,6 @@ public class Wagon : MonoBehaviour
         WagonX = WagonObj.transform.position.x;
         WagonY = WagonObj.transform.position.y;
 
-        Rope_bX = Rope_b.transform.position.x;
-        Rope_bY = Rope_b.transform.position.y;
-        Rope_mX = Rope_m.transform.position.x;
-        Rope_mY = Rope_m.transform.position.y;
-        Rope_wX = Rope_w.transform.position.x;
-        Rope_wY = Rope_w.transform.position.y;
-
         //GroundY = Ground.transform.position.y;
 
         //if (WagonY > GroundY + 1.59)
@@ -66,29 +60,51 @@ public class Wagon : MonoBehaviour
         bool r = (PlayerX <= (WagonX + 3f) && PlayerX >= (WagonX + 2.5f)); // 수레 오른쪽에 있을 때
         bool l = (PlayerX <= (WagonX - 2f) && PlayerX >= (WagonX - 2.5f)); // 수레 왼쪽에 있을 때
 
-        if (Input.GetKey(KeyCode.LeftControl) && l && Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.LeftControl) && l && Input.GetKey(KeyCode.RightArrow) && (WagonX <= 168.5f))
         {
+            //ani.SetBool("run", true);
+
             Debug.Log("attached");
             transform.Translate(new Vector2(1.35f * 1.95f * Time.deltaTime, 0));
 
-            Rope_w.transform.Translate(new Vector2(0.05f, 0));
-            Rope_w.transform.Rotate(new Vector3(0, 0, 0.2f));
+            Rope_w.transform.Translate(0.7f * Time.deltaTime, -speed * Time.deltaTime, 0);
+            Rope_w.transform.Rotate(0, 0, 2.2f * Time.deltaTime);
+
+            Rope_m.transform.Translate(-0.5f * Time.deltaTime, 2.0f * Time.deltaTime, 0);
+            Rope_m.transform.Rotate(0, 0, -1.3f * Time.deltaTime);
+
+
             Rope_b.transform.Translate(new Vector2(0, 0.03f));
+
             box.transform.Translate(new Vector2(0, 0.03f));
         }
 
-        if (Input.GetKey(KeyCode.LeftControl) && r && Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.LeftControl) && r && Input.GetKey(KeyCode.RightArrow) && (WagonX <= 168.5f))
         {
+            //ani.SetBool("run", true);
+
             Debug.Log("attached");
             transform.Translate(new Vector2(1.35f * 1.95f * Time.deltaTime, 0));
 
+            Rope_w.transform.Translate(0.7f * Time.deltaTime, -speed * Time.deltaTime, 0);
+            Rope_w.transform.Rotate(0, 0, 2.2f * Time.deltaTime);
+
+            Rope_m.transform.Translate(-0.5f * Time.deltaTime, 2.0f * Time.deltaTime, 0);
+            Rope_m.transform.Rotate(0, 0, -1.3f * Time.deltaTime);
+
+
             Rope_b.transform.Translate(new Vector2(0, 0.03f));
+
             box.transform.Translate(new Vector2(0, 0.03f));
+        }
+
+        if(WagonX >= 168.5 && box.transform.position.y > 0.2f)
+        {
+            box.transform.Translate(new Vector2(0, -0.2f));
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
-    {
-
+    { 
 
     }
     private void OnTriggerEnter2D(Collider2D collision)

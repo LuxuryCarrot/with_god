@@ -57,11 +57,17 @@ public class S2PlayerMove : MonoBehaviour {
 
             transform.Translate(new Vector2(moveDirection.x, 0));
 
-            if (Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                animator.SetBool("Walking", false);
-                animator.SetBool("pull", true);
-            }
+            //if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.RightArrow))
+            //{
+            //    animator.SetBool("Walking", false);
+            //    animator.SetBool("push", true);
+            //}
+
+            //if (Input.GetKeyUp(KeyCode.LeftControl) && Input.GetKeyUp(KeyCode.RightArrow))
+            //{
+            //    animator.SetBool("Walking", false);
+            //    animator.SetBool("pull", false);
+            //}
         }
         if (Input.GetAxisRaw("Horizontal") == 0)
         {

@@ -45,7 +45,6 @@ public class PlayerFSMManager : MonoBehaviour {
         Walk_Main = GetComponent<AudioSource>();
     
         animator.SetBool("isWalking", false);
-
     }
 
     // Use this for initialization
