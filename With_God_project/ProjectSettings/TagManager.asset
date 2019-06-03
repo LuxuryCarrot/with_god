@@ -29,6 +29,7 @@ TagManager:
   - rope_b
   - rope_w
   - EndPos
+  - PosCheck
   layers:
   - Default
   - TransparentFX

@@ -8,8 +8,11 @@ public class Main_T_Ready : MonoBehaviour
     GameObject Player;
     GameObject StoneTower;
     GameObject EndPos;
+    GameObject Position;
     float EndPosX, EndPosY;
+    public float Xpos, Ypos;
     bool enter = true;
+    bool StoneTowerPosCheck;
     // Use this for initialization
     void Start()
     {
@@ -17,13 +20,23 @@ public class Main_T_Ready : MonoBehaviour
         Player = GameObject.FindGameObjectWithTag("Player");
         StoneTower = GameObject.FindGameObjectWithTag("StoneTower");
 
+        Position = GameObject.FindGameObjectWithTag("PosCheck");
         EndPos = GameObject.FindGameObjectWithTag("EndPos");
 
         EndPosX = Player.transform.position.x;
         EndPosY = Player.transform.position.y;
+
+        
     }
     private void Update()
     {
+        //StoneTowerPosCheck = ()
+
+        if ()
+        {
+
+        }
+        Position.transform.position = new Vector2(StoneTower.transform.position.x - Xpos, StoneTower.transform.position.y + Ypos);
         if (enter == true)
         {
             EndPosX = Player.transform.position.x;
