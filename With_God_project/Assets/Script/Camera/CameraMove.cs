@@ -46,19 +46,19 @@ public class CameraMove : MonoBehaviour
         }
     }
 
-    //private void Update()
-    //{
-    //    if(shakeTimer >= 0)
-    //    {
-    //        Vector2 ShakePos = Random.insideUnitCircle * shakeAmount;
-    //        transform.position = new Vector3(transform.position.x + ShakePos.x, transform.position.y, transform.position.z);
-    //        shakeTimer -= Time.deltaTime;
-    //    }
-    //}
+//    private void Update()
+//    {
+//        if(shakeTimer >= 0)
+//        {
+//            Vector2 ShakePos = Random.insideUnitCircle * shakeAmount;
+//            transform.position = new Vector3(transform.position.x + ShakePos.x, transform.position.y, transform.position.z);
+//            shakeTimer -= Time.deltaTime;
+//        }
+//    }
 
-    //public void ShakeCamera(float shakePwr, float shakeDur)
-    //{
-    //    shakeAmount = shakePwr;
-    //    shakeTimer = shakeDur;
-    //}
+//    public void ShakeCamera(float shakePwr, float shakeDur)
+//    {
+//        shakeAmount = shakePwr;
+//        shakeTimer = shakeDur;
+//    }
 }
