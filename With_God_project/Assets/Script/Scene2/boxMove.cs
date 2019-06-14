@@ -9,43 +9,34 @@ public class boxMove : MonoBehaviour
     GameObject box;
     GameObject player;
 
-    float boxX;
-    float boxY;
-    float playerX;
-    float playerY;
+
+    Rigidbody2D _rb;
+
 
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
 
         box = GameObject.FindGameObjectWithTag("Box");
+
+
+        _rb = GetComponent<Rigidbody2D>();
+        _rb.isKinematic = true;
+
     }
 
-    void Start () {
-    }
 	
 	void Update () {
 
-        playerX = player.transform.position.x;
-        playerY = player.transform.position.y;
 
-        boxX = box.transform.position.x;
-        boxY = box.transform.position.y;
-
-        bool r = (playerX <= (boxX + 3f) && playerX >= (boxX + 2.5f));
-        bool l = (playerX <= (boxX - 2f) && playerX >= (boxX - 2.5f));
-
-        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.RightArrow) && l && r)
+        if (box.transform.position.y  > 9f)
         {
-            Debug.Log("box_move");
-            transform.Translate(new Vector2(1.35f * 1.95f * Time.deltaTime, 0));
+            Debug.Log("y > 11  ");
+            _rb.isKinematic = false;
         }
-
-        // 수정ㄹ해,,,
-        if (boxY <= (playerY + 1.0f) && boxX <= (playerX + 0.3f) && boxY > -0.2f)
-        {
-            SceneManager.LoadScene("StartScene");
-        }
+        
 
     }
+
+
 }

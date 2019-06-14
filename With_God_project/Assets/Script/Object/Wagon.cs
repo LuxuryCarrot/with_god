@@ -65,7 +65,7 @@ public class Wagon : MonoBehaviour
         {
             //ani.SetBool("run", true);
 
-            Debug.Log("attached");
+
             transform.Translate(new Vector2(1.35f * 1.95f * Time.deltaTime, 0));
 
             Rope_w.transform.Translate(0.7f * Time.deltaTime, -speed * Time.deltaTime, 0);
