@@ -1500,7 +1500,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 5.622}
@@ -4288,10 +4288,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4b9211a03bbf84ea51f2a46c6cc289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 1
-  boxMask:
-    serializedVersion: 2
-    m_Bits: 0
   moveSpeed: 0
   fallSpeed: 0
   xMove: 0

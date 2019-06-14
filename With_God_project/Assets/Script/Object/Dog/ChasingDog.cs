@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class ChasingDog : MonoBehaviour {
     GameObject Player;
     GameObject DogCheck;
-    public float Speed = 5.145f;
+    public float Speed = 5.1f;
     private Animator animator;
     public SpriteRenderer mySpriteRenderer;
 
@@ -23,11 +23,15 @@ public class ChasingDog : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(DogCheck.transform.position.x < Player.transform.position.x && Player.transform.position.x < 180)
+        if(DogCheck.transform.position.x < Player.transform.position.x && Player.transform.position.x < 91)
         {
             transform.Translate(new Vector2(1 * Speed * Time.deltaTime, 0));
+        }
+        if (Player.transform.position.x > 91)
+        {
 
         }
+        
        
       
         

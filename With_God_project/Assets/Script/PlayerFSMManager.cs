@@ -6,9 +6,6 @@ using UnityEngine.SceneManagement;
 public class PlayerFSMManager : MonoBehaviour {
 
     AudioSource Walk_Main;
-    public float distance = 5.0f; //raycast 길이
-    public LayerMask boxMask;
-    GameObject box;
     GameObject player;
     GameObject DogCheck;
     GameObject Godtree; // 당산나무
@@ -36,7 +33,6 @@ public class PlayerFSMManager : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player");
         Godtree = GameObject.FindGameObjectWithTag("Finish");
 
-        moveSpeed = 2.5f;
         fallSpeed = -20.0f;
 
         animator = GetComponent<Animator>();
@@ -66,7 +62,7 @@ public class PlayerFSMManager : MonoBehaviour {
 
         if(DogCheck.transform.position.x < transform.position.x)
         {
-            moveSpeed = 4.0f;
+            moveSpeed = 2.5f;
             if (Input.GetAxisRaw("Horizontal") < 0)
             {
                 mySpriteRenderer.flipX = true;
@@ -93,7 +89,7 @@ public class PlayerFSMManager : MonoBehaviour {
         }
         if (DogCheck.transform.position.x > transform.position.x)
         {
-            moveSpeed = 2.5f;
+            moveSpeed = 1f;
             if (Input.GetAxisRaw("Horizontal") < 0)
             {
                 mySpriteRenderer.flipX = true;
@@ -121,7 +117,7 @@ public class PlayerFSMManager : MonoBehaviour {
         // 당산나무 지났을 시
         if (transform.position.x >= Godtree.transform.position.x)
         {
-            moveSpeed = 2.5f;
+            moveSpeed = 1f;
             animator.SetBool("isRunning", false);
 
             if (Input.GetAxisRaw("Horizontal") < 0)
