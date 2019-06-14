@@ -60,7 +60,8 @@ public class Wagon : MonoBehaviour
         bool r = (PlayerX <= (WagonX + 3f) && PlayerX >= (WagonX + 2.5f)); // 수레 오른쪽에 있을 때
         bool l = (PlayerX <= (WagonX - 2f) && PlayerX >= (WagonX - 2.5f)); // 수레 왼쪽에 있을 때
 
-        if (Input.GetKey(KeyCode.LeftControl) && l && Input.GetKey(KeyCode.RightArrow) && (WagonX <= 168.5f))
+        // 캐릭터가 수레의 왼쪽에 있을 때
+        if (Input.GetKey(KeyCode.LeftControl) && l && Input.GetKey(KeyCode.RightArrow) && (WagonX <= 147.7f))
         {
             //ani.SetBool("run", true);
 
@@ -79,7 +80,8 @@ public class Wagon : MonoBehaviour
             box.transform.Translate(new Vector2(0, 0.03f));
         }
 
-        if (Input.GetKey(KeyCode.LeftControl) && r && Input.GetKey(KeyCode.RightArrow) && (WagonX <= 168.5f))
+        // 캐릭터가 수레의 오른쪽에 있을 때
+        if (Input.GetKey(KeyCode.LeftControl) && r && Input.GetKey(KeyCode.RightArrow) && (WagonX <= 147.7f))
         {
             //ani.SetBool("run", true);
 
@@ -98,7 +100,7 @@ public class Wagon : MonoBehaviour
             box.transform.Translate(new Vector2(0, 0.03f));
         }
 
-        if(WagonX >= 168.5 && box.transform.position.y > 0.2f)
+        if(WagonX >= 147.7f && box.transform.position.y > -0.25f)
         {
             box.transform.Translate(new Vector2(0, -0.2f));
         }
