@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class ChasingDog : MonoBehaviour {
     GameObject Player;
     GameObject DogCheck;
-    private float Speed;
+    public float Speed = 5.145f;
     private Animator animator;
     public SpriteRenderer mySpriteRenderer;
 
@@ -16,7 +16,6 @@ public class ChasingDog : MonoBehaviour {
         Player = GameObject.FindGameObjectWithTag("Player");
         DogCheck = GameObject.FindGameObjectWithTag("DogCheck");
         mySpriteRenderer = GetComponent<SpriteRenderer>();
-        Speed = 5.27f;
     }
     void Start () {
 	
@@ -24,16 +23,12 @@ public class ChasingDog : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(DogCheck.transform.position.x < Player.transform.position.x && Player.transform.position.x < 190)
+        if(DogCheck.transform.position.x < Player.transform.position.x && Player.transform.position.x < 180)
         {
             transform.Translate(new Vector2(1 * Speed * Time.deltaTime, 0));
 
         }
-        if(Player.transform.position.x >= 190)
-        {
-            transform.Translate(new Vector2(-1 * Speed * Time.deltaTime, 0));
-            mySpriteRenderer.flipX = true;
-        }
+       
       
         
 	}
