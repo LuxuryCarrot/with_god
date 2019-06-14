@@ -37,7 +37,7 @@ public class boxMove : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.RightArrow) && l && r)
         {
-            Debug.Log("attached");
+            Debug.Log("box_move");
             transform.Translate(new Vector2(1.35f * 1.95f * Time.deltaTime, 0));
         }
 

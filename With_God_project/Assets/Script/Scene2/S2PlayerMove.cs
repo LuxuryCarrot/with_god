@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class S2PlayerMove : MonoBehaviour {
 
@@ -69,9 +70,20 @@ public class S2PlayerMove : MonoBehaviour {
             //    animator.SetBool("pull", false);
             //}
         }
+
         if (Input.GetAxisRaw("Horizontal") == 0)
         {
             animator.SetBool("Walking", false);
+        }
+
+        if ((player.transform.position.x >= 210.0f) && (player.transform.position.y <= -5f))
+        {
+            SceneManager.LoadScene("Scene3");
+        }
+
+        if ((player.transform.position.x <= 210.0f) && (player.transform.position.y <= -3f))
+        {
+            SceneManager.LoadScene("StartScene");
         }
     }
 }
