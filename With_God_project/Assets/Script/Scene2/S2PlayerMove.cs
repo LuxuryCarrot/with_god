@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class S2PlayerMove : MonoBehaviour {
 
-    public CameraMove camera;
+    //public CameraMove camera;
 
     GameObject player;
 
@@ -19,7 +19,7 @@ public class S2PlayerMove : MonoBehaviour {
 
     private void Awake()
     {
-        camera = GetComponent<CameraMove>();
+        //camera = GetComponent<CameraMove>();
 
         player = GameObject.FindGameObjectWithTag("Player");
 

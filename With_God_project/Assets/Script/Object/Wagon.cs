@@ -14,9 +14,9 @@ public class Wagon : MonoBehaviour
     GameObject box;
 
     float PlayerX;
-    float PlayerY;
+    //float PlayerY;
     float WagonX;
-    float WagonY;
+    //float WagonY;
 
     float speed = 0.9f;
 
@@ -46,9 +46,9 @@ public class Wagon : MonoBehaviour
     void Update()
     {
         PlayerX = PlayerObj.transform.position.x;
-        PlayerY = PlayerObj.transform.position.y;
+        //PlayerY = PlayerObj.transform.position.y;
         WagonX = WagonObj.transform.position.x;
-        WagonY = WagonObj.transform.position.y;
+        //WagonY = WagonObj.transform.position.y;
 
         //GroundY = Ground.transform.position.y;
 
