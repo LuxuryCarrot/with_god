@@ -139,5 +139,6 @@ public class PlayerFSMManager : MonoBehaviour {
             }
         }
     }
+ 
 }
 

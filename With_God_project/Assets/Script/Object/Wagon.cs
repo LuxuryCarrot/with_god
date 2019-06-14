@@ -39,7 +39,7 @@ public class Wagon : MonoBehaviour
         Rope_m = GameObject.FindGameObjectWithTag("rope");
         Rope_w = GameObject.FindGameObjectWithTag("rope_w");
 
-        box = GameObject.FindGameObjectWithTag("Box");
+        box = GameObject.FindGameObjectWithTag("Box_r");
     }
 
     // Update is called once per frame

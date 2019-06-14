@@ -36,6 +36,7 @@ TagManager:
   - door_c
   - door_o
   - wall2
+  - Box_r
   layers:
   - Default
   - TransparentFX

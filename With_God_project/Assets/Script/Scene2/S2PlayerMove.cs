@@ -85,4 +85,5 @@ public class S2PlayerMove : MonoBehaviour {
             SceneManager.LoadScene("StartScene");
         }
     }
+    
 }
