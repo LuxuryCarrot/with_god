@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class ChasingDog : MonoBehaviour {
     GameObject Player;
     GameObject DogCheck;
-    public float Speed = 5.1f;
+    private float Speed;
     private Animator animator;
     public SpriteRenderer mySpriteRenderer;
 
@@ -16,6 +16,7 @@ public class ChasingDog : MonoBehaviour {
         Player = GameObject.FindGameObjectWithTag("Player");
         DogCheck = GameObject.FindGameObjectWithTag("DogCheck");
         mySpriteRenderer = GetComponent<SpriteRenderer>();
+        Speed = 5.18f;
     }
     void Start () {
 	
