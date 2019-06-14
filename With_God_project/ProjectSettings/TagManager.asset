@@ -35,6 +35,7 @@ TagManager:
   - Bell
   - door_c
   - door_o
+  - wall2
   layers:
   - Default
   - TransparentFX

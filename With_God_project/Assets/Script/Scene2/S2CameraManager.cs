@@ -5,12 +5,14 @@ using UnityEngine;
 public class S2CameraManager : CameraController
 {
     GameObject Player;
-    GameObject Temple;
+    GameObject Temple_in;
+    GameObject Temple_out;
 
     private void Awake()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
-        Temple = GameObject.FindGameObjectWithTag("Wall");
+        Temple_in = GameObject.FindGameObjectWithTag("Wall");
+        Temple_out = GameObject.FindGameObjectWithTag("wall2");
     }
 
     void Start()
@@ -20,12 +22,12 @@ public class S2CameraManager : CameraController
 
     void FixedUpdate()
     {
-        if (Player.transform.position.x >= Temple.transform.position.x)
+        if ((Temple_out.transform.position.x >= Player.transform.position.x) && (Player.transform.position.x >= Temple_in.transform.position.x))
         {
             ShowSubCam();
         }
 
-        else if (Player.transform.position.x < Temple.transform.position.x)
+        else
         {
             ShowMainCam();
         }
