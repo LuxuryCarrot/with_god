@@ -42,10 +42,10 @@ public class boxMove : MonoBehaviour
         }
 
         // 수정ㄹ해,,,
-        if (boxY <= (playerY + 1.0f) && boxX <= (playerX + 0.3f) && boxY > -0.2f)
-        {
-            SceneManager.LoadScene("StartScene");
-        }
+        //if (boxY <= (playerY + 1.0f) && boxX <= (playerX + 0.3f) && boxY > -0.2f)
+        //{
+        //    SceneManager.LoadScene("StartScene");
+        //}
 
     }
 }
