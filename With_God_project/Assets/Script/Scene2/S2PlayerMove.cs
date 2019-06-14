@@ -23,7 +23,6 @@ public class S2PlayerMove : MonoBehaviour {
 
         player = GameObject.FindGameObjectWithTag("Player");
 
-        moveSpeed = 2.5f;
         fallSpeed = -20.0f;
 
         animator = GetComponent<Animator>();
