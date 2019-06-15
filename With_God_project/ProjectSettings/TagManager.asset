@@ -42,6 +42,7 @@ TagManager:
   - GroundCheck
   - EventMaker_1
   - centi
+  - stalactite_event_1
   layers:
   - Default
   - TransparentFX

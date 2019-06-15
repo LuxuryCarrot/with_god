@@ -8,7 +8,7 @@ public class S3PlayerMove : MonoBehaviour {
 
 
     GameObject Lantern;
-
+    GameObject centi;
 
     public float moveSpeed;
     public float fallSpeed;
@@ -23,6 +23,7 @@ public class S3PlayerMove : MonoBehaviour {
     {
         //camera = GetComponent<CameraMove>();
 
+        centi = GameObject.FindGameObjectWithTag("centi");
         Lantern = GameObject.FindGameObjectWithTag("Lantern");
 
         Lantern.GetComponent<SpriteRenderer>().enabled = false;
@@ -67,6 +68,10 @@ public class S3PlayerMove : MonoBehaviour {
         if (Input.GetAxisRaw("Horizontal") == 0)
         {
             animator.SetBool("Walking", false);
+        }
+        if (centi.transform.position.x > 244)
+        {
+            moveSpeed = 2.6f;
         }
 
     }
