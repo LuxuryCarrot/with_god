@@ -5,7 +5,6 @@ using UnityEngine;
 public class MoveToward : MonoBehaviour {
 
     GameObject Start;
-    GameObject End;
 
 
 
@@ -16,7 +15,6 @@ public class MoveToward : MonoBehaviour {
     private void Awake()
     {
         Start = GameObject.FindGameObjectWithTag("Start");
-        End = GameObject.FindGameObjectWithTag("End");
         CurrPos = Start.transform.position;
     }
 

@@ -37,6 +37,11 @@ TagManager:
   - door_o
   - wall2
   - Box_r
+  - Stalactite_s
+  - Lantern
+  - GroundCheck
+  - EventMaker_1
+  - centi
   layers:
   - Default
   - TransparentFX
