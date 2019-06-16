@@ -58,9 +58,14 @@ public class EventMaker_2 : MonoBehaviour {
     {
         Debug.Log("2초");
 
-        centiSpeed = 0.17f;
+        centiSpeed = 0.10f;
         if (centi.transform.position.x < 244)
         {
+            if (isEventStart)
+            {
+                Stalactite.transform.position = new Vector2(Player.transform.position.x + 5, Player.transform.position.y + 10);
+                Stalactite.transform.Translate(new Vector2(0, 0.25f));
+            }
             Invoke("slowSpeed", 1);
         }
         if (centi.transform.position.x > 244)
