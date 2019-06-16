@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EventMaker_2 : MonoBehaviour {
 
@@ -15,6 +16,7 @@ public class EventMaker_2 : MonoBehaviour {
     public bool isCentiSlow;
     public bool isCentiFast;
     public bool isEventStart;
+   
     // Use this for initialization
     private void Awake()
     {
@@ -47,6 +49,13 @@ public class EventMaker_2 : MonoBehaviour {
         centiSpeed = 0.05f;
         if (centi.transform.position.x < 244)
         {
+            if (isEventStart)
+            {
+                if (centi.transform.position.x + 9.5 > Player.transform.position.x && centi.transform.position.y + 20 > Player.transform.position.y && centi.transform.position.x - 9.5 < Player.transform.position.x && centi.transform.position.y - 20 < Player.transform.position.y)
+                {
+                    SceneManager.LoadScene("StartScene");
+                }
+            }
             Invoke("fastSpeed", 2);
         }
         if (centi.transform.position.x > 244)
@@ -63,8 +72,13 @@ public class EventMaker_2 : MonoBehaviour {
         {
             if (isEventStart)
             {
-                Stalactite.transform.position = new Vector2(Player.transform.position.x + 5, Player.transform.position.y + 10);
+                Stalactite.transform.position = new Vector2(Player.transform.position.x + 6, Player.transform.position.y + 10);
                 Stalactite.transform.Translate(new Vector2(0, 0.25f));
+                if (centi.transform.position.x + 9.5 > Player.transform.position.x && centi.transform.position.y + 20 > Player.transform.position.y && centi.transform.position.x - 9.5 < Player.transform.position.x && centi.transform.position.y - 20 < Player.transform.position.y)
+                {
+                    SceneManager.LoadScene("StartScene");
+                }
+                
             }
             Invoke("slowSpeed", 1);
         }
