@@ -8,6 +8,7 @@ public class S2PlayerMove : MonoBehaviour {
     //public CameraMove camera;
 
     GameObject player;
+    GameObject S3Check;
 
     public float moveSpeed;
     public float fallSpeed;
@@ -22,6 +23,7 @@ public class S2PlayerMove : MonoBehaviour {
         //camera = GetComponent<CameraMove>();
 
         player = GameObject.FindGameObjectWithTag("Player");
+        S3Check = GameObject.FindGameObjectWithTag("Finish");
 
         fallSpeed = -20.0f;
 
@@ -75,10 +77,11 @@ public class S2PlayerMove : MonoBehaviour {
             animator.SetBool("Walking", false);
         }
 
-        //if ((player.transform.position.x >= 210.0f) && (player.transform.position.y <= -5f))
-        //{
-        //    SceneManager.LoadScene("Scene3");
-        //}
+        // 씬3 로드
+        if ((player.transform.position.y <= S3Check.transform.position.y) && (player.transform.position.x >= S3Check.transform.position.x))
+        {
+            SceneManager.LoadScene("Scene3");
+        }
 
         //if ((player.transform.position.x <= 210.0f) && (player.transform.position.y <= -3f))
         //{
