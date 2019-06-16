@@ -12,7 +12,7 @@ public class TigerMove : MonoBehaviour
     Animator Tiger_ani;
 
     float speed;
-    Vector2 FinishPoint;
+    GameObject FinishPoint;
     bool isTigerOnFinish;
 
     private void Awake()
@@ -22,7 +22,7 @@ public class TigerMove : MonoBehaviour
         godtree = GameObject.FindGameObjectWithTag("Finish");
         // 태그 재활용..ㅎㅎ
 
-        FinishPoint = new Vector2(247, -4);
+        FinishPoint = GameObject.FindGameObjectWithTag("Tiger_Finish");
         Tiger = GameObject.FindGameObjectWithTag("rope");
 
         isTigerOnFinish = false;
@@ -36,9 +36,9 @@ public class TigerMove : MonoBehaviour
 
         if (Player.transform.position.x > godtree.transform.position.x + 10 && !isTigerOnFinish)
         {
-            transform.position = Vector2.MoveTowards(new Vector2(Tiger.transform.position.x, Tiger.transform.position.y), new Vector2(FinishPoint.x, FinishPoint.y), speed);
+            transform.position = Vector2.MoveTowards(new Vector2(Tiger.transform.position.x, Tiger.transform.position.y), new Vector2(FinishPoint.transform.position.x, FinishPoint.transform.position.y), speed);
         }
-        if (Tiger.transform.position.x == 247 && Tiger.transform.position.y == -4)
+        if (Tiger.transform.position.x == FinishPoint.transform.position.x && Tiger.transform.position.y == FinishPoint.transform.position.y)
         {
             isTigerOnFinish = true;
         }
