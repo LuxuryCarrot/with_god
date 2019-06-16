@@ -596,7 +596,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.37091827, y: 0.9890871}
@@ -792,7 +792,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 364618456}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.29, y: -3.94, z: 3.14}
+  m_LocalPosition: {x: -10.2, y: 8, z: 3.14}
   m_LocalScale: {x: 1.5, y: 1.5, z: 0}
   m_Children:
   - {fileID: 1644658498}
@@ -2676,8 +2676,14 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -9.491636, y: 4.455499}
-  - {x: -9.016602, y: 2.2269573}
+  - {x: -12.485668, y: 13.254289}
+  - {x: -11.587837, y: 12.109125}
+  - {x: -10.846809, y: 9.814688}
+  - {x: -10.200134, y: 7.579232}
+  - {x: -9.719307, y: 6.326783}
+  - {x: -9.521896, y: 3.9732246}
+  - {x: -9.135422, y: 2.3732662}
+  - {x: -9.016602, y: 1.7992382}
   - {x: -8.963888, y: 1.7387202}
   - {x: -8.812695, y: 1.4327798}
   - {x: -8.514598, y: 1.0071006}

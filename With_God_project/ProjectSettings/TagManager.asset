@@ -43,6 +43,7 @@ TagManager:
   - EventMaker_1
   - centi
   - stalactite_event_1
+  - StartText
   layers:
   - Default
   - TransparentFX

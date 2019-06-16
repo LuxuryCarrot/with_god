@@ -16,7 +16,7 @@ public class ChasingDog : MonoBehaviour {
         Player = GameObject.FindGameObjectWithTag("Player");
         DogCheck = GameObject.FindGameObjectWithTag("DogCheck");
         mySpriteRenderer = GetComponent<SpriteRenderer>();
-        Speed = 5.18f;
+        Speed = 5.16f;
     }
     void Start () {
 	
