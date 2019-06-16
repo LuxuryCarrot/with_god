@@ -41,7 +41,7 @@ public class EventMaker_1 : MonoBehaviour {
         if (collision.gameObject.tag == "Player")
         {
             centi.transform.position = new Vector2(Player.transform.position.x + 50, Player.transform.position.y + 9.5f);
-            stalactite_event_1.transform.position = new Vector2(transform.position.x, transform.position.y + 10);
+            stalactite_event_1.transform.position = new Vector2(transform.position.x-1, transform.position.y + 10);
             CentiSprite.flipX = true;
             isCentiMove = true;
             isEvent1Start = true;

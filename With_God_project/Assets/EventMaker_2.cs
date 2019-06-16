@@ -60,7 +60,7 @@ public class EventMaker_2 : MonoBehaviour {
         }
         if (centi.transform.position.x > 244)
         {
-            centiSpeed = 0.03f;
+            centiSpeed = -0.0001f;
         }
     }
     void fastSpeed()
@@ -78,13 +78,12 @@ public class EventMaker_2 : MonoBehaviour {
                 {
                     SceneManager.LoadScene("StartScene");
                 }
-                
             }
             Invoke("slowSpeed", 1);
         }
         if (centi.transform.position.x > 244)
         {
-            centiSpeed = 0.03f;
+            centiSpeed = -0.0001f;
         }
     }
 
