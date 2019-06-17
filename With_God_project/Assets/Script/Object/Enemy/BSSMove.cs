@@ -6,22 +6,29 @@ public class BSSMove : MonoBehaviour {
 
     GameObject BSS;
     GameObject Player;
+    GameObject Tiger;
     GameObject enemy_check;
     Animator ani;
 
     float speed;
-    
+    Vector2 FinishPoint;
+
+    bool isBSSOnFinish;
 
     private void Awake()
     {
         BSS = GameObject.FindGameObjectWithTag("rope_b");
         Player = GameObject.FindGameObjectWithTag("Player");
-        enemy_check = GameObject.FindGameObjectWithTag("rope");
+        Tiger = GameObject.FindGameObjectWithTag("rope");
         // 태그 재활용..ㅎㅎ
 
         ani = GetComponent<Animator>();
 
-        speed = 5.0f;
+        FinishPoint = new Vector2(237, -3.5f);
+
+        isBSSOnFinish = false;
+
+        BSS.SetActive(false);
 
         //ani.SetBool("Walking", false);
         //ani.SetBool("Attack", false);
@@ -33,22 +40,27 @@ public class BSSMove : MonoBehaviour {
 	
 	void Update () {
 
-        if (Player.transform.position.x < enemy_check.transform.position.x)
-        {
-            BSS.SetActive(false);
-        }
+        speed = 5.0f * Time.deltaTime;
 
-        if(Player.transform.position.x > enemy_check.transform.position.x && Player.transform.position.x > 200)
+        if (Player.transform.position.x >= 228 && !isBSSOnFinish)
         {
             BSS.SetActive(true);
-            //ani.SetBool("Walking", true);
-
-            transform.Translate(new Vector2(1 * speed * Time.deltaTime, 0));
+            ani.SetBool("Walking", true);
+            transform.position = Vector2.MoveTowards(new Vector2(BSS.transform.position.x, BSS.transform.position.y), new Vector2(FinishPoint.x, FinishPoint.y), speed);
         }
 
-        //if ((Player.transform.position.x - transform.position.x) <= 6)
-        //{
-        //    ani.SetBool("Walking", false);
-        //}
+        if (BSS.transform.position.x == 237 && BSS.transform.position.y == -3.5f)
+        {
+            isBSSOnFinish = true;
+        }
+        if (!isBSSOnFinish)
+        {
+            ani.SetBool("Moving", true);
+        }
+        if(isBSSOnFinish)
+        {
+            ani.SetBool("Moving", false);
+        }
+
 	}
 }
