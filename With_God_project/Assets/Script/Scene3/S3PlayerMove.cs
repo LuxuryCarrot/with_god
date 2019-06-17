@@ -81,6 +81,9 @@ public class S3PlayerMove : MonoBehaviour {
         {
             Debug.Log("Entered");
             moveSpeed = 5.1f;
+
+            animator.SetBool("Walking", false);
+            animator.SetBool("Running", true);
         }
     }
 }

@@ -53,15 +53,26 @@ public class TigerMove : MonoBehaviour
             Tiger_ani.SetBool("Moving", false);
         }
 
-        if (Player.transform.position.x >= 234)
+        if(Input.GetKey(KeyCode.C))
         {
             Tiger_ani.SetBool("Attack", true);
-            transform.Translate(-4f * Time.deltaTime, 0, 0);
+            transform.Translate(-6f * Time.deltaTime, 0, 0);
         }
 
-        if (transform.position.x <= 236.9f)
+        if(Input.GetKeyDown(KeyCode.V))
         {
             Tiger.SetActive(false);
         }
+
+        //if (Player.transform.position.x >= 234)
+        //{
+        //    Tiger_ani.SetBool("Attack", true);
+        //    transform.Translate(-4f * Time.deltaTime, 0, 0);
+        //}
+
+        //if (transform.position.x <= 236.9f)
+        //{
+        //    Tiger.SetActive(false);
+        //}
     }
 }

@@ -9,6 +9,7 @@ public class PlayerFSMManager : MonoBehaviour {
     GameObject player;
     GameObject DogCheck;
     GameObject Godtree; // 당산나무
+    GameObject Skirt;
     
     public float moveSpeed;
     public float fallSpeed;
@@ -32,6 +33,7 @@ public class PlayerFSMManager : MonoBehaviour {
     {
         player = GameObject.FindGameObjectWithTag("Player");
         Godtree = GameObject.FindGameObjectWithTag("Finish");
+        Skirt = GameObject.FindGameObjectWithTag("Stone");
 
         fallSpeed = -20.0f;
 
@@ -112,6 +114,17 @@ public class PlayerFSMManager : MonoBehaviour {
                 animator.SetBool("isWalking", false);
                 animator.SetBool("isRunning", false);
             }
+        }
+
+        if(Input.GetKeyDown(KeyCode.C))
+        {
+            animator.SetTrigger("BSS");
+        }
+
+        if(Input.GetKey(KeyCode.X))
+        {
+            Skirt.SetActive(true);
+            Skirt.transform.Translate(-8f * Time.deltaTime, 1.5f * Time.deltaTime, 0);
         }
 
         // 당산나무 지났을 시

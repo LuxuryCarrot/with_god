@@ -9,6 +9,8 @@ public class S2PlayerMove : MonoBehaviour {
 
     GameObject player;
     GameObject S3Check;
+    GameObject Wagon;
+    GameObject Wall;
 
     public float moveSpeed;
     public float fallSpeed;
@@ -24,15 +26,17 @@ public class S2PlayerMove : MonoBehaviour {
 
         player = GameObject.FindGameObjectWithTag("Player");
         S3Check = GameObject.FindGameObjectWithTag("Finish");
+        Wagon = GameObject.FindGameObjectWithTag("Wagon");
+        Wall = GameObject.FindGameObjectWithTag("Wall");
 
         fallSpeed = -20.0f;
 
         animator = GetComponent<Animator>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
 
-        animator.SetBool("Walking", false);
-        animator.SetBool("push", false);
-        animator.SetBool("pull", false);
+        //animator.SetBool("Walking", false);
+        //animator.SetBool("push", false);
+        //animator.SetBool("pull", false);
     }
 
     void Start () {
@@ -59,13 +63,18 @@ public class S2PlayerMove : MonoBehaviour {
 
             transform.Translate(new Vector2(moveDirection.x, 0));
 
-            //if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.RightArrow))
+            if(player.transform.position.x < Wall.transform.position.x && Input.GetKeyUp(KeyCode.LeftControl) && Input.GetKeyUp(KeyCode.RightArrow))
+            {
+                animator.SetBool("Throw", true);
+            }
+
+            //if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.RightArrow) && player.transform.position.x > Wagon.transform.position.x)
             //{
             //    animator.SetBool("Walking", false);
-            //    animator.SetBool("push", true);
+            //    animator.SetBool("pull", true);
             //}
 
-            //if (Input.GetKeyUp(KeyCode.LeftControl) && Input.GetKeyUp(KeyCode.RightArrow))
+            //if (Input.GetKeyUp(KeyCode.LeftControl) && Input.GetKeyUp(KeyCode.RightArrow) && player.transform.position.x > Wagon.transform.position.x)
             //{
             //    animator.SetBool("Walking", false);
             //    animator.SetBool("pull", false);

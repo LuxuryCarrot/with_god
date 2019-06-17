@@ -5,8 +5,8 @@ using UnityEngine;
 public class S3CameraMove : MonoBehaviour
 {
     // 카메라 흔들림 효과
-    public float shakeTimer;
-    public float shakeAmount;
+    //public float shakeTimer;
+    //public float shakeAmount;
 
     float characterPosition = 5.0f;
 
@@ -33,10 +33,10 @@ public class S3CameraMove : MonoBehaviour
 
         transform.position = new Vector3(posX, posY, transform.position.z);
 
-        if ((player.transform.position.x >= 52.0f) && (player.transform.position.x <= 240.0f))
-        {
-            ShakeCamera(0.1f, 0.08f);
-        }
+        //if ((player.transform.position.x >= 52.0f) && (player.transform.position.x <= 240.0f))
+        //{
+        //    ShakeCamera(0.1f, 0.08f);
+        //}
 
         if (bounds)
         {
@@ -46,19 +46,19 @@ public class S3CameraMove : MonoBehaviour
         }
     }
 
-        private void Update()
-        {
-            if(shakeTimer >= 0)
-            {
-                Vector2 ShakePos = Random.insideUnitCircle * shakeAmount;
-                transform.position = new Vector3(transform.position.x + ShakePos.x, transform.position.y, transform.position.z);
-                shakeTimer -= Time.deltaTime;
-            }
-        }
+        //private void Update()
+        //{
+        //    if(shakeTimer >= 0)
+        //    {
+        //        Vector2 ShakePos = Random.insideUnitCircle * shakeAmount;
+        //        transform.position = new Vector3(transform.position.x + ShakePos.x, transform.position.y + ShakePos.y, transform.position.z);
+        //        shakeTimer -= Time.deltaTime;
+        //    }
+        //}
 
-        public void ShakeCamera(float shakePwr, float shakeDur)
-        {
-            shakeAmount = shakePwr;
-            shakeTimer = shakeDur;
-        }
+        //public void ShakeCamera(float shakePwr, float shakeDur)
+        //{
+        //    shakeAmount = shakePwr;
+        //    shakeTimer = shakeDur;
+        //}
 }
