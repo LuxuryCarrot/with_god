@@ -15,8 +15,11 @@ public class ChasingDog : MonoBehaviour {
     {
         Player = GameObject.FindGameObjectWithTag("Player");
         DogCheck = GameObject.FindGameObjectWithTag("DogCheck");
+        animator = GetComponent<Animator>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
-        Speed = 5.18f;
+        Speed = 5.16f;
+        animator.SetBool("isRunning", true);
+
     }
     void Start () {
 	
@@ -24,13 +27,13 @@ public class ChasingDog : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(DogCheck.transform.position.x < Player.transform.position.x && Player.transform.position.x < 91)
+        if(DogCheck.transform.position.x < Player.transform.position.x && Player.transform.position.x < 86f)
         {
             transform.Translate(new Vector2(1 * Speed * Time.deltaTime, 0));
         }
-        if (Player.transform.position.x > 91)
+        if (Player.transform.position.x >= 86)
         {
-
+            animator.SetBool("isRunning", false);
         }
         
        
